@@ -46,42 +46,4 @@ $(document).ready(function () {
       });
     });
   });
-  //Canvas
-  var ctx = document.getElementById("myCanvas");
-  var myCanvas = new Chart(ctx, {
-    type: 'horizontalBar',
-    data: {
-      labels: ["skill 1", "skill 2", "skill 3"],
-      datasets: [{
-        data: [40, 80, 90, 100],
-        backgroundColor: ["#5288ff", "#ff501b", "#7cde68"],
-      }]
-    },
-    options: {
-      plugins: {
-        barRoundness: 5
-      },
-      responsive: true,
-      legend: {
-        display: false,
-        fullWidth: true,
-        labels: {
-          boxWidth: 1,
-          padding: 20
-        }
-      },
-      scales: {
-        xAxes: [{
-          gridLines: {
-            display: false,
-          },
-          ticks: {
-            beginAtZero: true,
-          },
-         }]
-
-      }
-    }
-  });
-
 });
