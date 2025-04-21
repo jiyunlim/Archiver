@@ -1,8 +1,12 @@
 function initFunction() {
-  
-  var swiperMain = new Swiper('.main-swiper', {
+  return;
+}
+
+// Swiper 초기화 함수 따로 분리
+function initSwiper() {
+  new Swiper('.main-swiper', {
     autoplay: true,
-    speed: 600,
+    speed: 1000,
     loop: true,
     effect: 'fade',
     navigation: {
@@ -10,6 +14,4 @@ function initFunction() {
       prevEl: '.swiper-button-prev',
     }
   });
-//  return;
-} 
-//initFunction();
+}

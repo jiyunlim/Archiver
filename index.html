@@ -12,12 +12,12 @@
 
   <!-- style link -->
   <link rel="icon" type="image/x-icon" href="./assets/img/favicon/home.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/common.css">
   <link rel="stylesheet" href="./assets/css/main_2025.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.css">
 
-  <!-- script -->
-  <script src="assets/js/include.js"></script>  
+  <!-- include script -->
+  <script src="./assets/js/include.js"></script>
 
   <title>TEST</title>
   <!--  
@@ -27,21 +27,18 @@
 
 <body style="background-color:">
   <header>
-<!--    <div include-html="header.html"></div>-->
+    <div data-include="_header.html"></div>
   </header>
   <section id="wrap">
-    <div include-html="assets/html/_slide_banner.html"></div> 
-       
-<!--    <div include-html="footer.html"></div>-->
+    <div data-include="_slide_banner.html"></div>    
+
   </section>
 
-  
   <!-- swiper script ui -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.js"></script>
   <script src="./assets/js/index.js"></script>
-  <script>
-    includeHTML();
-  </script>
-</body>
 
-</html>
+  <script>
+    includes();
+  </script>
+</body></html>

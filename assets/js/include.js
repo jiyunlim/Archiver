@@ -1,31 +1,20 @@
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain attribute:*/
-    file = elmnt.getAttribute("include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            elmnt.innerHTML = this.responseText;
-          }
-          if (this.status == 404) {
-            elmnt.innerHTML = "Page not found.";
-          }
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("include-html");
-          includeHTML();
-        }
+// include.js
+const includes = async () => {
+  const elements = document.querySelectorAll('[data-include]');
+  for (let el of elements) {
+    const file = el.getAttribute('data-include');
+    const res = await fetch(file);
+    if (res.ok) {
+      const html = await res.text();
+      el.innerHTML = html;
+
+      if (html.includes('swiper')) {
+        setTimeout(() => {
+          initSwiper();
+        }, 0); // 또는 50~100ms 정도 줘도 됨
       }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
     }
   }
-}
+};
+
+document.addEventListener('DOMContentLoaded', includes);
