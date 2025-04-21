@@ -10,12 +10,12 @@ body{font-size: 10px}
 .from { color: #fff; position: absolute; top: 8px; left: 8px; z-index: 2; opacity: 0.8;font-size: 10px; }
 .from * { color: #fff;}
 
-#main-banner .swiper-slide{width: 100%; height: 280px;}
-#main-banner img{display: block;width: 100%; margin: auto}
-#main-banner .swiper-button-next.next,
-#main-banner .swiper-button-prev.prev{ width: 68px; height: 68px;}
-#main-banner .swiper-button-next.next:after { content: ''; display: inline-block; width: 100%; height: 100%;background: url('../img/ico/round-arrow.png') 0 0 no-repeat; background-size: contain;}
-#main-banner .swiper-button-prev.prev:after {content: ''; display: inline-block; width: 100%; height: 100%;background: url('../img/ico/round-arrow.png') 0 7px no-repeat; background-size: contain; transform: rotate(180deg);}
+.main-swiper .swiper-slide{width: 100%; height: 280px;}
+.main-swiper img{display: block;width: 100%; margin: auto}
+.main-swiper .swiper-button-next.next,
+.main-swiper .swiper-button-prev.prev{ width: 68px; height: 68px;}
+.main-swiper .swiper-button-next.next:after { content: ''; display: inline-block; width: 100%; height: 100%;background: url('../img/ico/round-arrow.png') 0 0 no-repeat; background-size: contain;}
+.main-swiper .swiper-button-prev.prev:after {content: ''; display: inline-block; width: 100%; height: 100%;background: url('../img/ico/round-arrow.png') 0 7px no-repeat; background-size: contain; transform: rotate(180deg);}
 
 #contents{padding: 0 60px; }
 #nav.fixed + #contents #area-01{padding-top:120px;}
