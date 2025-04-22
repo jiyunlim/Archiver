@@ -11,7 +11,7 @@ const includes = async () => {
       if (html.includes('swiper')) {
         setTimeout(() => {
           initSwiper();
-        }, 0); // 또는 50~100ms 정도 줘도 됨
+        }, 0); 
       }
     }
   }
