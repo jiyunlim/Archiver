@@ -6,9 +6,11 @@ body {
   width: 100%;
   height: 100vh;
 }
+
 nav {
   width: 100%;
 }
+
 nav > ul {
   width: 100%;
   display: flex;
@@ -17,41 +19,56 @@ nav > ul {
   align-items: center;
   background-color: aliceblue;
 }
+
 nav > ul > li {
   flex: 1;
 }
+
 nav > ul > li > a {
   display: block;
   text-align: center;
   height: 30px;
   line-height: 30px;
 }
+
 #nav.fixed {
   position: fixed;
   top: 0;
   z-index: 10;
 }
+
 #wrap {
-  height: 100vh;
+  padding: 30px;
+  max-width: 1024px;
+  margin: 0 auto;
 }
+
+#wrap img {
+  border-radius: 12px;
+}
+
+/*swiper js*/
 .main-swiper .swiper-slide {
-  width: 100%;
-  height: 280px;
+  width: 33.33%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
 }
+
 .main-swiper img {
   display: block;
   width: 100%;
   margin: auto
 }
+
 .main-swiper .swiper-button-next.next,
 .main-swiper .swiper-button-prev.prev {
   width: 68px;
   height: 68px;
 }
+
 .main-swiper .swiper-button-next.next:after {
   content: '';
   display: inline-block;
@@ -60,6 +77,7 @@ nav > ul > li > a {
   background: url('../img/ico/round-arrow.png') 0 0 no-repeat;
   background-size: contain;
 }
+
 .main-swiper .swiper-button-prev.prev:after {
   content: '';
   display: inline-block;
@@ -68,4 +86,58 @@ nav > ul > li > a {
   background: url('../img/ico/round-arrow.png') 0 7px no-repeat;
   background-size: contain;
   transform: rotate(180deg);
+}
+.main-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  position: static;
+  display: inline-block;
+  height: 30px;
+}
+.main-swiper .swiper-pagination-progressbar em {
+  float: left;
+  background: url(../img/ico/fire.png) 0 0 no-repeat;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  transform: inherit;
+}
+
+/*top banner*/
+.top-intro-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+}
+
+.top-intro-wrap .text-area {
+  flex: 1;
+}
+
+.top-intro-wrap .content-area {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.top-intro-wrap .content-area .layout-one {
+  flex: 1;
+  display: inline-flex;
+  justify-content: flex-end;
+  max-height: 400px;
+}
+
+.top-intro-wrap .content-area .layout-col {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 20px;
+}
+
+.top-intro-wrap .content-area .layout-col .inner-cell {
+  height: 100px;
+}
+
+.top-intro-wrap .content-area .layout-col .inner-cell + div {
+  height: 280px;
 }
