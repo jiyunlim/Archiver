@@ -27,8 +27,9 @@ nav > ul > li {
 nav > ul > li > a {
   display: block;
   text-align: center;
-  height: 30px;
+  height: 3rem;
   line-height: 30px;
+  font-size: 1.8rem;
 }
 
 #nav.fixed {
@@ -48,6 +49,9 @@ nav > ul > li > a {
 }
 
 /*swiper js*/
+.swiper.main-swiper{
+  min-height: 360px;
+}
 .main-swiper .swiper-slide {
   width: 33.33%;
   height: auto;
@@ -87,18 +91,29 @@ nav > ul > li > a {
   background-size: contain;
   transform: rotate(180deg);
 }
-.main-swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
-  position: static;
-  display: inline-block;
-  height: 30px;
+.main-swiper .swiper-pagination-bullets {
+  display: flex;
+  transition: all 0.3s ;
 }
-.main-swiper .swiper-pagination-progressbar em {
-  float: left;
+.main-swiper .swiper-pagination-bullet {
+  position: relative;
+  margin:0 !important;
+  border-radius: 0;
+  flex: 1;
+  transition: all 0.3s ;
+  opacity: 1 !important;
+}
+.main-swiper .swiper-pagination-bullet-active::before {
+  content: "";
   background: url(../img/ico/fire.png) 0 0 no-repeat;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   display: inline-block;
   transform: inherit;
+  background-size: contain;
+  position: absolute;
+  top: -30px;
+  left: 10px;
 }
 
 /*top banner*/
@@ -141,3 +156,66 @@ nav > ul > li > a {
 .top-intro-wrap .content-area .layout-col .inner-cell + div {
   height: 280px;
 }
+.bigTitle {
+  padding: 3rem 0;
+}
+
+.bigTitle .text-title {
+  font-size: 2.2rem;
+}
+.loader {
+  transition: all .3s ;
+  height: 32px;
+  aspect-ratio: 2.5;
+  --_g: no-repeat radial-gradient(farthest-side,#ddd 90%,#0000);
+  background:var(--_g), var(--_g), var(--_g), var(--_g);
+  background-size: 20% 50%;
+  animation: l43 1s infinite linear; 
+}
+@keyframes l43 {
+  0%     {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+  16.67% {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+  33.33% {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 0   ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+  50%    {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 100%,calc(2*100%/3) 0   ,calc(3*100%/3) 50% }
+  66.67% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 100%,calc(3*100%/3) 0   }
+  83.33% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 100%}
+  100%   {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
+}
+
+.searchBar {
+  padding: 0 3rem 3rem;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.searchBar .input-wrap {
+  border: 3px solid #479DFF;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  border-radius: .8rem;
+}
+.searchBar .input-wrap input[type="text"] {
+  min-height:3rem;
+  flex:1;
+  outline: none;
+  border: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color:#2554B0;
+}
+.searchBar .input-wrap input[type="text"]::placeholder{
+  color:#2554B0;
+  opacity: 0.5;
+}
+.searchBar .input-wrap .sch-btn {
+  cursor: pointer;
+  width: 4rem;
+  border: 0;
+  background-color: transparent;
+  min-height: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='80px' height='80px' viewBox='0 0 8.66 8.66' style='shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd' version='1.1' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:xodm='http://www.corel.com/coreldraw/odm/2003' fill='%23000000' stroke='%23000000' stroke-width='0.0000866'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E .fil0 %7Bfill:none%7D .fil2 %7Bfill:%232554B0;fill-rule:nonzero%7D .fil1 %7Bfill:%23479DFF;fill-rule:nonzero%7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_x0020_1'%3E%3Crect class='fil0' height='8.66' width='8.66'%3E%3C/rect%3E%3Cpath class='fil1' d='M2.88 4.08l0 -0.95c0,-0.1 0.04,-0.19 0.11,-0.26l0 0c0.07,-0.07 0.17,-0.11 0.27,-0.11l1.46 0c0.06,0 0.11,0.03 0.13,0.08l0.24 0.43 0.77 0c0.1,0 0.19,0.04 0.26,0.11l0 0c0.07,0.07 0.11,0.17 0.11,0.27l0 2.11 -0.28 0 0 -2.11c0,-0.03 -0.01,-0.05 -0.02,-0.07 -0.02,-0.02 -0.05,-0.03 -0.07,-0.03l-0.86 0 0 0c-0.05,0 -0.09,-0.02 -0.12,-0.07l-0.24 -0.44 -1.38 0c-0.03,0 -0.05,0.01 -0.07,0.02 -0.02,0.02 -0.03,0.05 -0.03,0.07l0 0.95 -0.28 0z'%3E%3C/path%3E%3Cpath class='fil2' d='M6.09 5.9l-2.89 0c-0.08,0 -0.16,-0.03 -0.23,-0.08 -0.06,-0.05 -0.11,-0.11 -0.13,-0.2l-0.33 -1.2c-0.02,-0.06 -0.02,-0.12 -0.01,-0.17l0 0c0.01,-0.06 0.04,-0.11 0.07,-0.16 0.04,-0.05 0.09,-0.08 0.14,-0.11 0.05,-0.02 0.1,-0.04 0.16,-0.04l2.58 0c0.09,0 0.17,0.03 0.23,0.08 0.07,0.05 0.12,0.12 0.14,0.2l0.41 1.5c0.02,0.08 -0.03,0.16 -0.1,0.18 -0.01,0 -0.02,0 -0.04,0l0 0zm-2.89 -0.28l2.71 0 -0.36 -1.33c-0.01,-0.02 -0.02,-0.04 -0.04,-0.05 -0.01,-0.01 -0.03,-0.02 -0.06,-0.02l-2.58 0c-0.01,0 -0.03,0.01 -0.04,0.01 -0.01,0.01 -0.02,0.02 -0.03,0.03 -0.01,0.01 -0.02,0.03 -0.02,0.04 0,0.02 0,0.03 0,0.05l0.33 1.2c0,0.02 0.02,0.04 0.03,0.05 0.02,0.01 0.04,0.02 0.06,0.02z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-position: center center;
+}
+
+

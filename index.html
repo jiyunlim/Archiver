@@ -12,9 +12,9 @@
 
   <!-- style link -->
   <link rel="icon" type="image/x-icon" href="./assets/img/favicon/home.png">
-  <link rel="stylesheet" href="./assets/css/common.css">
-  <link rel="stylesheet" href="./assets/css/main_2025.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.css">
+  <link type="text/css" rel="stylesheet" media="screen" href="./assets/css/common.css">
+  <link type="text/css" rel="stylesheet" media="screen" href="./assets/css/main_2025.css">
+  <link type="text/css" rel="stylesheet" media="screen" href="https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.css">
 
   <!-- include script -->
   <script src="./assets/js/include.js"></script>
@@ -30,15 +30,16 @@
     <div class="component-in" data-include="assets/html/header.html"></div>
   </header>
   <section id="wrap">
-    <div class="component-in" data-include="assets/html/topBanner.html"></div>    
+    <div class="component-in" data-include="assets/html/topBanner.html"></div> 
+    <div class="component-in" data-include="assets/html/bigTitle.html" title='단락 테스트 01'></div>
+    <div class="component-in" data-include="assets/html/searchBar.html"></div>
     <div class="component-in" data-include="assets/html/slideBanner.html"></div>    
+    <div class="component-in" data-include="assets/html/bigTitle.html" title='단락 테스트 02'></div>
+   
   </section>
 
   <!-- swiper script ui -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.6/swiper-bundle.min.js"></script>
   <script src="./assets/js/index.js"></script>
 
-  <script>
-    includes();
-  </script>
 </body></html>
