@@ -6,11 +6,9 @@ body {
   width: 100%;
   height: 100vh;
 }
-
 nav {
   width: 100%;
 }
-
 nav > ul {
   width: 100%;
   display: flex;
@@ -19,35 +17,30 @@ nav > ul {
   align-items: center;
   background-color: aliceblue;
 }
-
 nav > ul > li {
   flex: 1;
 }
-
 nav > ul > li > a {
   display: block;
   text-align: center;
   height: 3rem;
   line-height: 30px;
   font-size: 1.8rem;
+  font-weight: bold;
 }
-
 #nav.fixed {
   position: fixed;
   top: 0;
   z-index: 10;
 }
-
 #wrap {
   padding: 30px;
   max-width: 1024px;
   margin: 0 auto;
 }
-
 #wrap img {
   border-radius: 12px;
 }
-
 /*swiper js*/
 .swiper.main-swiper{
   min-height: 360px;
@@ -60,19 +53,16 @@ nav > ul > li > a {
   align-items: center;
   background-color: #fff;
 }
-
 .main-swiper img {
   display: block;
   width: 100%;
   margin: auto
 }
-
 .main-swiper .swiper-button-next.next,
 .main-swiper .swiper-button-prev.prev {
   width: 68px;
   height: 68px;
 }
-
 .main-swiper .swiper-button-next.next:after {
   content: '';
   display: inline-block;
@@ -81,7 +71,6 @@ nav > ul > li > a {
   background: url('../img/ico/round-arrow.png') 0 0 no-repeat;
   background-size: contain;
 }
-
 .main-swiper .swiper-button-prev.prev:after {
   content: '';
   display: inline-block;
@@ -123,43 +112,36 @@ nav > ul > li > a {
   flex-direction: row;
   column-gap: 30px;
 }
-
 .top-intro-wrap .text-area {
   flex: 1;
 }
-
 .top-intro-wrap .content-area {
   flex: 2;
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
-
 .top-intro-wrap .content-area .layout-one {
   flex: 1;
   display: inline-flex;
   justify-content: flex-end;
   max-height: 400px;
 }
-
 .top-intro-wrap .content-area .layout-col {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-end;
   row-gap: 20px;
 }
-
 .top-intro-wrap .content-area .layout-col .inner-cell {
   height: 100px;
 }
-
 .top-intro-wrap .content-area .layout-col .inner-cell + div {
   height: 280px;
 }
 .bigTitle {
   padding: 3rem 0;
 }
-
 .bigTitle .text-title {
   font-size: 2.2rem;
 }
@@ -181,7 +163,6 @@ nav > ul > li > a {
   83.33% {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 100%}
   100%   {background-position: calc(0*100%/3) 50% ,calc(1*100%/3) 50% ,calc(2*100%/3) 50% ,calc(3*100%/3) 50% }
 }
-
 .searchBar {
   padding: 0 3rem 3rem;
   max-width: 750px;
