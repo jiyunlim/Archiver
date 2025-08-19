@@ -1,4 +1,5 @@
-'use strict';
+//document.addEventListener('DOMContentLoaded', function () {
+
 // title 속성 값을 가져와 <h2> 태그 내부에 삽입
 setTimeout(() => {
   var components = document.querySelectorAll(".component-in");
@@ -35,5 +36,18 @@ function initSwiper() {
       el: ".swiper-pagination"
     }
   });
-  return;
 }
+
+//var _navBtn = document.querySelectorAll('nav button');
+//_navBtn.addEventListener("click", () => {
+//  var _this = document.querySelector('nav');
+////  _navBtn.forEach(function (nav) {
+//    _this.classList.addClass("active");
+////  });
+//});
+
+
+// Code to run after the DOM is ready
+console.log("DOM is fully loaded and parsed!");
+
+//});
