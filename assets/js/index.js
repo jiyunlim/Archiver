@@ -1,6 +1,7 @@
 //document.addEventListener('DOMContentLoaded', function () {
 
 // title 속성 값을 가져와 <h2> 태그 내부에 삽입
+/*
 setTimeout(() => {
   var components = document.querySelectorAll(".component-in");
   components.forEach(function (component) {
@@ -11,6 +12,7 @@ setTimeout(() => {
     }
   });
 }, 1300);
+*/
 
 
 // Swiper 초기화 함수 따로 분리
