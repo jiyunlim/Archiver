@@ -4,7 +4,7 @@
   "description": "EJS portfolio project with SCSS compile",
   "main": "app.js",
   "scripts": {
-    "start": "npm-run-all --parallel dev sass",
+    "start": "node app.js",
     "dev": "nodemon app.js",
     "sass": "npx sass --watch ./public/scss:./public/css"
   },
