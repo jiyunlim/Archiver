@@ -1,0 +1,173 @@
+@charset"UTF-8";
+
+@use "variation" as *;
+@use "modal" ;
+
+html,
+body {
+	width: 100%;
+	height: 100vh;
+}
+
+#wrap {
+	height: calc(100vh - 80px);
+
+	div[class*="history-0"] {
+		max-width: 360px;
+		margin: 0 auto;
+		text-align: center;
+		
+	}
+}
+
+.timeLine-box {
+	max-width: 360px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+
+	.timeLine-line {
+		width: 2px;
+		height: 100%;
+		min-height: 70px;
+		background-color: #000;
+	}
+
+	.timeLine-dot {
+		width: 15px;
+		height: 15px;
+		background-color: #000;
+		border-radius: 50%;
+	}
+}
+
+[class*="btn-"] {
+	cursor: pointer;
+
+	&:hover {
+		font-weight: bold;
+	}
+}
+
+.history-content.active {
+	transition: all .3s ease-in-out;
+	border: 1px solid #e8e8e8;
+	border-radius: 8px;
+	height: auto;
+	padding: 15px 24px 24px;
+	margin-top: 24px;
+	max-width: 420px;
+
+	h3.title {
+		font-size: $ft-normal;
+		text-align: left;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #e8e8e8;
+	}
+
+	.detail {
+		text-align: left;
+		font-size: $ft-small;
+		line-height: 1.6;
+		padding-top: 15px;
+
+		p {
+			position: relative;
+		}
+
+		.sub-title {
+			font-weight: bold;
+			padding: 4px 0;
+
+			& ~ p {
+				margin-left: 11px;
+
+				&::before {
+					content: "";
+					width: 3px;
+					height: 3px;
+					background-color: $jobko-color;
+				}
+			}
+		}
+
+		.btn-popup {
+			display: inline-flex;
+			align-items: center;
+			background: #f8f8f8;
+			padding: 4px 16px;
+			border-radius: 5px;
+			margin-top: 10px;
+
+			&::before {
+				content: none !important;
+			}
+
+			.ico-popup {
+				background-image: url($ico-popup);
+			}
+		}
+	}
+
+}
+.hidden_div {
+	overflow: hidden;
+	margin-top: 0;
+	height: 0;
+	padding: 0 24px 0;
+	border: 0;
+}
+
+i.ico {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.loader {
+	transition: all .5s;
+	height: 32px;
+	aspect-ratio: 2.5;
+	--_g: no-repeat radial-gradient(farthest-side, #ddd 90%, #0000);
+	background: var(--_g), var(--_g), var(--_g), var(--_g);
+	background-size: 20% 50%;
+	animation: l43 1s infinite linear;
+}
+
+
+
+
+@keyframes l43 {
+	0% {
+		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	}
+
+	16.67% {
+		background-position: calc(0*100%/3) 0, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	}
+
+	33.33% {
+		background-position: calc(0*100%/3) 100%, calc(1*100%/3) 0, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	}
+
+	50% {
+		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 100%, calc(2*100%/3) 0, calc(3*100%/3) 50%
+	}
+
+	66.67% {
+		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 100%, calc(3*100%/3) 0
+	}
+
+	83.33% {
+		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 100%
+	}
+
+	100% {
+		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	}
+}
