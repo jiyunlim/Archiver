@@ -1,23 +1,16 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const path = require('path');
 
-// EJS 설정
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// 정적 파일 경로 설정
-app.use(express.static('public'));
-
-// 라우팅
+// 라우터 예시
 app.get('/', (req, res) => {
 	res.render('index');
 });
 
-app.get('/about', (req, res) => {
-	res.render('about');
-});
-
-// 서버 실행
-app.listen(PORT, () => {
-	console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+// 🚀 Render에서 사용할 포트 (환경변수 PORT)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
