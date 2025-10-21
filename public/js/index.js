@@ -29,6 +29,38 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+  // ----
+  const assetPath = "../";
+
+  // 슬라이드 데이터만 배열로 관리
+  const slideData = [
+    { img: `${assetPath}images/new-error-img.png`, text: "Slide 1 설명" },
+    { img: `${assetPath}images/new-error-img.png`, text: "Slide 2 설명" },
+    { img: `${assetPath}images/new-error-img.png`, text: "Slide 3 설명" },
+  ];
+
+  const swiper = new Swiper('.swiper.card', {
+    slidesPerView: 1,
+    speed: 500,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    virtual: {
+      slides: slideData.map(data => `
+        <div class="slide-content">
+          <img src="${data.img}" alt="">
+          <p>${data.text}</p>
+        </div>
+      `),
+    },
+  });
+
 
 
 

@@ -22,6 +22,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.modal-root .modal-close .btn-close {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath data-name='%ED%95%A9%EC%B9%98%EA%B8%B0 55' d='M8 8L.5 15.5 8 8 .5.5 8 8 15.5.5 8 8l7.5 7.5z' fill='none' stroke='%23171717' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
 .modal-root .modal-title {
   font-size: 24px;
   padding-bottom: 20px;
@@ -30,6 +33,15 @@
   position: absolute;
   top: 24px;
   right: 24px;
+}
+
+.swiper-area img {
+  display: block;
+  width: 100%;
+  min-height: 150px;
+}
+.swiper-area.card {
+  width: 560px;
 }
 
 /*# sourceMappingURL=modal.css.map */

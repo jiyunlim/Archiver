@@ -15,7 +15,7 @@ Archiver/
 │  ├─ scss/
 │  └─ css/
 ├─ convert.js            # new 스크립트 
-└─ dist/                 # 변환된 HTML + public 폴더
+└─ dist/                 # 변환된 HTML 폴더
 
 
 # notice

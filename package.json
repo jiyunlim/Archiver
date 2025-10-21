@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "convert": "node convert.js",
-    "start": "npm run convert && node app.js",
-    "dev": "node app.js"
+    "sass": "npx sass --watch ./public/scss:./public/css",
+    "dev": "node app.js",
+    "start": "npm-run-all --parallel convert sass dev"
   },
   "dependencies": {
     "ejs": "^3.1.10",
