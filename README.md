@@ -1,5 +1,5 @@
 ## 2025.04 - 파일생성
-## https://github.com/jiyunlim/Archiver.git
+## https://jiyunlim.github.io/Archiver/dist/
 ## 2025.10 - ejs 환경세팅
 ## Archive/ 3000 실행 + scss 컴파일 : npm start
 ##

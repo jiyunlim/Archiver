@@ -4,9 +4,9 @@
   "description": "EJS portfolio project with SCSS compile",
   "main": "app.js",
   "scripts": {
-  "convert": "node convert.js",
-  "start": "npm-run-all convert dev",
-  "dev": "node app.js"
+    "convert": "node convert.js",
+    "start": "npm run convert && node app.js",
+    "dev": "node app.js"
   },
   "dependencies": {
     "ejs": "^3.1.10",
