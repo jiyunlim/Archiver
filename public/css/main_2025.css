@@ -54,30 +54,68 @@ body {
   height: calc(100vh - 80px);
 }
 #wrap div[class*=history-0] {
-  max-width: 360px;
+  position: relative;
   margin: 0 auto;
   text-align: center;
 }
 
 .timeLine-box {
-  max-width: 360px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
 }
+.timeLine-box .timeLine-dot {
+  width: auto;
+  height: auto;
+}
+.timeLine-box .timeLine-dot .ico {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+.timeLine-box .timeLine-dot .ico-cat {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/ico/icon-cat.png");
+}
+.timeLine-box .timeLine-dot .ico-hurry {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/ico/icon-hurry-up.png");
+}
+.timeLine-box .timeLine-dot .ico-graphic {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/ico/icon-graphic-designer.png");
+}
+.timeLine-box .timeLine-dot .ico-discussion {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../images/ico/icon-discussion.png");
+}
 .timeLine-box .timeLine-line {
   width: 2px;
   height: 100%;
   min-height: 70px;
   background-color: #000;
-}
-.timeLine-box .timeLine-dot {
-  width: 15px;
-  height: 15px;
-  background-color: #000;
-  border-radius: 50%;
 }
 
 [class*=btn-] {
@@ -87,44 +125,55 @@ body {
   font-weight: bold;
 }
 
-.history-content.active {
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
-  height: auto;
-  padding: 15px 24px 24px;
-  margin-top: 24px;
-  max-width: 420px;
+.div-history .history-yymm {
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  width: 200px;
+  line-height: 24px;
 }
-.history-content.active h3.title {
+.div-history .history-yymm:hover {
+  opacity: 0.5;
+}
+
+.history-content {
+  transition: all 0.3s;
+  height: auto;
+  width: 360px;
+  margin: 0 auto;
+  padding-left: 110px;
+}
+.history-content.active {
+  transition: all 0.3s;
+  overflow: inherit;
+  height: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.history-content h3.title {
   font-size: 16px;
   text-align: left;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e8e8e8;
 }
-.history-content.active .detail {
+.history-content .detail {
   text-align: left;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 15px;
 }
-.history-content.active .detail p {
+.history-content .detail p {
   position: relative;
 }
-.history-content.active .detail .sub-title {
+.history-content .detail .sub-title {
   font-weight: bold;
   padding: 4px 0;
 }
-.history-content.active .detail .sub-title ~ p {
-  margin-left: 11px;
-}
-.history-content.active .detail .sub-title ~ p::before {
+.history-content .detail .sub-title ~ p::before {
   content: "";
   width: 3px;
   height: 3px;
   background-color: #0057ff;
 }
-.history-content.active .detail .btn-popup {
+.history-content .detail .btn-popup {
   display: inline-flex;
   align-items: center;
   background: #f8f8f8;
@@ -132,19 +181,17 @@ body {
   border-radius: 5px;
   margin-top: 10px;
 }
-.history-content.active .detail .btn-popup::before {
+.history-content .detail .btn-popup::before {
   content: none !important;
 }
-.history-content.active .detail .btn-popup .ico-popup {
+.history-content .detail .btn-popup .ico-popup {
   background-image: url("data:image/svg+xml,%3Csvg fill='%230057ff' width='64px' height='64px' viewBox='0 0 20.00 20.00' xmlns='http://www.w3.org/2000/svg' stroke='%230057ff' stroke-width='0.0002'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round' stroke='%23CCCCCC' stroke-width='0.12'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M16 2H7.979C6.88 2 6 2.88 6 3.98V12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 10H8V4h8v8zM4 10H2v6c0 1.1.9 2 2 2h6v-2H4v-6z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 }
 
 .hidden_div {
-  overflow: hidden;
-  margin-top: 0;
   height: 0;
-  padding: 0 24px 0;
-  border: 0;
+  overflow: hidden;
+  transition: all 0.3s;
 }
 
 i.ico {

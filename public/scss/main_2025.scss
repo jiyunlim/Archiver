@@ -13,58 +13,94 @@ body {
 	height: calc(100vh - 80px);
 
 	div[class*="history-0"] {
-		max-width: 360px;
+		position: relative;
 		margin: 0 auto;
 		text-align: center;
 		
 	}
 }
-
+// 탐라 구분선
 .timeLine-box {
-	max-width: 360px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	flex: 1;
 	align-items: center;
-
+	.timeLine-dot {
+		width: auto;
+		height: auto;
+		.ico{
+			display: block;
+			width: 100%;
+			height: 100%;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			background-position: center;
+			&-cat{
+				@include icons($w: 60px, $h: 60px);
+				background-image: url($ico-cat);
+			}
+			&-hurry{
+				@include icons($w: 60px, $h: 60px);
+				background-image: url($ico-hurry);
+			}
+			&-graphic{
+				@include icons($w: 60px, $h: 60px);
+				background-image: url($ico-graphic);
+			}
+			&-discussion{
+				@include icons($w: 60px, $h: 60px);
+				background-image: url($ico-discussion);
+			}
+		}
+	}
 	.timeLine-line {
 		width: 2px;
 		height: 100%;
 		min-height: 70px;
 		background-color: #000;
 	}
-
-	.timeLine-dot {
-		width: 15px;
-		height: 15px;
-		background-color: #000;
-		border-radius: 50%;
-	}
 }
 
 [class*="btn-"] {
 	cursor: pointer;
-
 	&:hover {
 		font-weight: bold;
 	}
 }
 
-.history-content.active {
-	transition: all .3s ease-in-out;
-	border: 1px solid #e8e8e8;
-	border-radius: 8px;
+.div-history{
+	.history-yymm{
+		cursor: pointer;
+		font-size: $ft-normal;
+		display: inline-block;
+		width: 200px;
+		line-height: 24px;
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+}
+
+.history-content {
+	transition: all .3s;
 	height: auto;
-	padding: 15px 24px 24px;
-	margin-top: 24px;
-	max-width: 420px;
+	width: 360px;
+	margin: 0 auto;
+	padding-left: 110px;
+
+	&.active{
+		transition: all .3s;
+		overflow: inherit;
+		height: auto;
+		padding-top: 16px ;
+		padding-bottom: 16px;
+	}
 
 	h3.title {
 		font-size: $ft-normal;
 		text-align: left;
-		padding-bottom: 15px;
-		border-bottom: 1px solid #e8e8e8;
 	}
 
 	.detail {
@@ -72,18 +108,13 @@ body {
 		font-size: $ft-small;
 		line-height: 1.6;
 		padding-top: 15px;
-
 		p {
 			position: relative;
 		}
-
 		.sub-title {
 			font-weight: bold;
 			padding: 4px 0;
-
 			& ~ p {
-				margin-left: 11px;
-
 				&::before {
 					content: "";
 					width: 3px;
@@ -100,11 +131,9 @@ body {
 			padding: 4px 16px;
 			border-radius: 5px;
 			margin-top: 10px;
-
 			&::before {
 				content: none !important;
 			}
-
 			.ico-popup {
 				background-image: url($ico-popup);
 			}
@@ -112,12 +141,11 @@ body {
 	}
 
 }
+// ----
 .hidden_div {
-	overflow: hidden;
-	margin-top: 0;
 	height: 0;
-	padding: 0 24px 0;
-	border: 0;
+	overflow: hidden;
+	transition: all .3s ;
 }
 
 i.ico {
@@ -138,9 +166,6 @@ i.ico {
 	background-size: 20% 50%;
 	animation: l43 1s infinite linear;
 }
-
-
-
 
 @keyframes l43 {
 	0% {

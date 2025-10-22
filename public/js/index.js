@@ -5,18 +5,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   divHistories.forEach(div => {
     const hiddenDiv = div.querySelector('.hidden_div');
-    const h2 = div.querySelector('h2');
-
-    h2.addEventListener('mouseenter', () => {
-      // alert();
+    if (!hiddenDiv) return;
+    div.addEventListener('mouseenter', () => {
       hiddenDiv.classList.add('active');
     });
-
-    div.addEventListener('mouseleave', () => {
-      hiddenDiv.classList.remove('active');
+    
+    document.addEventListener("click", (e) => {
+      if (!hiddenDiv.contains(e.target)){
+        hiddenDiv.classList.remove('active'); // 영역 밖 클릭 active제거
+      }
     });
   });
-  
+  // ----
+  const modalButtons = document.querySelectorAll("[data-pop]");
+  modalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const targetClass = button.dataset.pop; // data-pop 값
+      const targetEl = document.querySelector(`.modal-root.${targetClass}`);
+
+      if (targetEl) {
+        targetEl.classList.remove("hide"); // 보이기
+      }
+    });
+  });
   // ----
   const divModalRoot = document.querySelectorAll('.modal-root');
   divModalRoot.forEach( modal =>{
@@ -30,34 +41,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   // ----
-  const assetPath = "../";
-
-  // 슬라이드 데이터만 배열로 관리
-  const slideData = [
-    { img: `${assetPath}images/new-error-img.png`, text: "Slide 1 설명" },
-    { img: `${assetPath}images/new-error-img.png`, text: "Slide 2 설명" },
-    { img: `${assetPath}images/new-error-img.png`, text: "Slide 3 설명" },
-  ];
-
   const swiper = new Swiper('.swiper.card', {
     slidesPerView: 1,
-    speed: 500,
-    loop: true,
+    spaceBetween: 10,
+    speed: 400,
     pagination: {
       el: '.swiper-pagination',
       type: 'fraction',
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-    virtual: {
-      slides: slideData.map(data => `
-        <div class="slide-content">
-          <img src="${data.img}" alt="">
-          <p>${data.text}</p>
-        </div>
-      `),
     },
   });
 
