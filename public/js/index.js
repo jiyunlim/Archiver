@@ -3,19 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // ----
   const divHistories = document.querySelectorAll('.div-history');
 
-  divHistories.forEach(div => {
-    const hiddenDiv = div.querySelector('.hidden_div');
-    if (!hiddenDiv) return;
-    div.addEventListener('mouseenter', () => {
-      hiddenDiv.classList.add('active');
-    });
-    
-    document.addEventListener("click", (e) => {
-      if (!hiddenDiv.contains(e.target)){
-        hiddenDiv.classList.remove('active'); // 영역 밖 클릭 active제거
-      }
-    });
-  });
+	document.addEventListener('click', (e) => {
+		divHistories.forEach(div => {
+			const hiddenDiv = div.querySelector('.hidden_div');
+			if (!hiddenDiv) return;
+
+			if (div.contains(e.target)) {
+				// 클릭한 div의 hidden_div만 토글
+				hiddenDiv.classList.toggle('active');
+			} else {
+				// 나머지는 닫기
+				hiddenDiv.classList.remove('active');
+			}
+		});
+	});
+
   // ----
   const modalButtons = document.querySelectorAll("[data-pop]");
   modalButtons.forEach(button => {

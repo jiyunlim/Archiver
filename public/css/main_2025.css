@@ -52,6 +52,7 @@ body {
 
 #wrap {
   height: calc(100vh - 80px);
+  padding: 0 20px;
 }
 #wrap div[class*=history-0] {
   position: relative;
@@ -112,10 +113,10 @@ body {
   background-image: url("../images/ico/icon-discussion.png");
 }
 .timeLine-box .timeLine-line {
-  width: 2px;
+  width: 1px;
   height: 100%;
   min-height: 70px;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 [class*=btn-] {
@@ -133,15 +134,14 @@ body {
   line-height: 24px;
 }
 .div-history .history-yymm:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .history-content {
   transition: all 0.3s;
   height: auto;
-  width: 360px;
+  width: auto;
   margin: 0 auto;
-  padding-left: 110px;
 }
 .history-content.active {
   transition: all 0.3s;
@@ -152,9 +152,12 @@ body {
 }
 .history-content h3.title {
   font-size: 16px;
-  text-align: left;
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
 }
 .history-content .detail {
+  display: inline-block;
   text-align: left;
   font-size: 14px;
   line-height: 1.6;
