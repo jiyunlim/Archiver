@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (!hiddenDiv) return;
 
 			if (div.contains(e.target)) {
-				// 클릭한 div의 hidden_div만 토글
+				
 				hiddenDiv.classList.toggle('active');
 			} else {
-				// 나머지는 닫기
+				//영역 외 클릭 닫기
 				hiddenDiv.classList.remove('active');
 			}
 		});

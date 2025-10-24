@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "convert": "node convert.js",
-    "sass": "npx sass --watch ./public/scss:./public/css",
-    "dev": "node app.js",
+    "sass": "npx sass --watch ./public/scss:./public/css --style=compressed",
+    "dev": "nodemon app.js",
     "start": "npm-run-all --parallel convert sass dev"
   },
   "dependencies": {

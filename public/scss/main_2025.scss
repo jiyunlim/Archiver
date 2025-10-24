@@ -10,7 +10,6 @@ body {
 }
 
 #wrap {
-	height: calc(100vh - 80px);
 	padding: 0 20px;
 
 	div[class*="history-0"] {
@@ -81,6 +80,11 @@ body {
 		&:hover{
 			opacity: 0.6;
 		}
+		.ico-arrow {
+			background-position: center;
+			background-size: 14px;
+			background-image: url($ico-arrow-line);
+		}
 	}
 }
 
@@ -130,10 +134,11 @@ body {
 		.btn-popup {
 			display: inline-flex;
 			align-items: center;
-			background: #f8f8f8;
-			padding: 4px 16px;
+			padding: 4px 8px;
 			border-radius: 5px;
 			margin-top: 10px;
+			gap:4px;
+			border:1px solid $jobko-color;
 			&::before {
 				content: none !important;
 			}
