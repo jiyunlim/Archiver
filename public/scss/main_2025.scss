@@ -110,11 +110,14 @@ body {
 	}
 
 	.detail {
-		display: inline-block;
+		display: block;
 		text-align: left;
 		font-size: $ft-small;
 		line-height: 1.6;
-		padding-top: 15px;
+		margin-top: 15px;
+		padding: 15px;
+		box-shadow: 2px 3px 15px 2px rgba(0, 0, 0, .1);
+		border-radius: 8px;
 		p {
 			position: relative;
 		}
@@ -134,11 +137,10 @@ body {
 		.btn-popup {
 			display: inline-flex;
 			align-items: center;
-			padding: 4px 8px;
-			border-radius: 5px;
 			margin-top: 10px;
 			gap:4px;
-			border:1px solid $jobko-color;
+			color: $jobko-color;
+			font-weight: 600;
 			&::before {
 				content: none !important;
 			}
