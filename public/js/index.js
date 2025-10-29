@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// ----
 	const modalButtons = document.querySelectorAll("[data-pop]");
-	
+
 	modalButtons.forEach(button => {
 		button.addEventListener("click", () => {
 			const targetClass = button.dataset.pop; // data-pop 값
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	// ----
 	const divModalRoot = document.querySelectorAll('.modal-root');
-	
+
 	divModalRoot.forEach(modal => {
 		const _tsBtnClose = modal.querySelector('.modal-close');
 		const _tsContDiv = modal.querySelector('.modal');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 	// ----
-	const swiper = new Swiper('.swiper.card', {
+	const swiperCard = new Swiper('.swiper.card', {
 		slidesPerView: 1,
 		spaceBetween: 10,
 		speed: 400,
@@ -58,6 +58,26 @@ document.addEventListener('DOMContentLoaded', function () {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
+		observeParents: true,
+		observer: true,
+	});
+
+	var swiperAuto = new Swiper(".swiper.auto", {
+		grabCursor: true,
+		effect: "creative",
+		speed: 500,
+		loop: true,
+		creativeEffect: {
+			prev: {
+				shadow: true,
+				translate: [0, 0, -400],
+			},
+			next: {
+				translate: ["100%", 0, 0],
+			},
+		},
+		observeParents: true,
+		observer: true,
 	});
 
 	/*

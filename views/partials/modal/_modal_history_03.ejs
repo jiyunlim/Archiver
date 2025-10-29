@@ -1,14 +1,32 @@
-<div id="cordial" class="modal-root udid hide">
-  <div class="modal">
-    <h1 class="modal-title">프로젝트 상세</h1>
-    <div class="modal-content">
-      <p class="cont-desc"></p>
-      <div class="projects-names">
-      	<ul>
-      		<li><img src="../<%= assetPath %>/images/tds-img-01.png" alt=""></li>
-      	</ul>
-      </div>
-    </div>
-    <button class="modal-close"><i class="ico btn-close"></i></button>
-  </div>
+<div id="skt" class="modal-root skt hide">
+	<div class="modal">
+		<h1 class="modal-title">프로젝트 상세</h1>
+		<div class="modal-content">
+			<div class="projects-slides">
+				<div class="swiper-area auto">
+					<div class="swiper auto">
+						<div class="swiper-wrapper">
+							<%- include('../slides/_slide_history_02.ejs') %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<h2># SKT T DirectShop - 업무상세 </h2>
+				<ul>
+					<li class="project__content">
+						<p class="txt__title">투입기간</p>
+						<p class="txt__content">입사 ~ 2023-12</p>
+						<p class="txt__title">내용</p>
+						<p class="txt__content">T DirectShop 상시 운영 업무 <br>: PC / MO / InApp </p>
+						<p class="txt__content">2022 T DirectShop 판매기능 고도화 <br>: 모바일 진행</p>
+						<p class="txt__content">고도화_2022 & 2023 T DirectShop > InApp <br>: 모바일 진행 <br> *1차 무선, 2차 유선</p>
+						<p class="txt__title icon-skill">사용 스킬</p>
+						<p class="txt__content">html, css, jquery, javascript</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="modal-close"><i class="ico btn-close"></i></button>
+	</div>
 </div>
