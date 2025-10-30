@@ -25,9 +25,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		button.addEventListener("click", () => {
 			const targetClass = button.dataset.pop; // data-pop 값
 			const targetEl = document.querySelector(`.modal-root.${targetClass}`);
+			const _tsBody = document.querySelector('body');
 
 			if (targetEl) {
 				targetEl.classList.remove("hide"); // 보이기
+				_tsBody.setAttribute('style', 'overflow: hidden;');
+			}else{
+				_tsBody.setAttribute('style', 'overflow: auto;');
 			}
 		});
 	});
@@ -37,10 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	divModalRoot.forEach(modal => {
 		const _tsBtnClose = modal.querySelector('.modal-close');
 		const _tsContDiv = modal.querySelector('.modal');
+		const _tsBody = document.querySelector('body');
+		
 		if (_tsBtnClose && _tsContDiv) {
 			_tsBtnClose.addEventListener('click', (e) => {
 				e.stopPropagation();
 				_tsContDiv.parentElement.classList.add("hide");
+				_tsBody.setAttribute('style', 'overflow: auto;');
 			});
 		}
 	});
@@ -67,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		effect: "creative",
 		speed: 500,
 		loop: true,
+//		autoplay: {
+//			delay: 3500,
+//			disableOnInteraction: false
+//		},
 		creativeEffect: {
 			prev: {
 				shadow: true,
