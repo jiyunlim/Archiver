@@ -66,14 +66,6 @@
 			}
 		}
 	}
-
-	&.skt {
-		.modal-content {
-			display: flex;
-			align-items: center;
-			gap: 25px;
-		}
-	}
 }
 
 .swiper-area {
@@ -176,7 +168,7 @@
 	box-shadow: $shadow;
 	border-radius: 8px;
 
-	.swiper-area.auto {
+	.auto {
 		overflow: hidden;
 		height: 360px;
 	}
@@ -230,6 +222,29 @@
 		padding: 15px 0 0;
 	}
 }
+
+.skt {
+		.modal-content {
+			display: flex;
+			align-items: center;
+			gap: 25px;
+
+			.swiper-fraction {
+				z-index: 5;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				padding: 0 0 8px;
+				background-color: rgb(255 255 255 / 70%);
+				span{
+					font-size: 11px;
+					color: #666;
+				}
+			}
+		}
+	}
 
 @media screen and (max-width: 425px) {
 	.cordial {
@@ -289,17 +304,19 @@
 
 		&.skt {
 			overflow: hidden;
+
 			.modal-content {
 				flex-direction: column;
 				gap: 15px;
 				height: calc(100% - 50px);
 
 				.content {
-					flex:1;
+					flex: 1;
 					width: 100%;
 					overflow: auto;
 				}
 			}
+
 		}
 	}
 }

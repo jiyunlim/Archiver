@@ -74,10 +74,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		effect: "creative",
 		speed: 500,
 		loop: true,
-//		autoplay: {
-//			delay: 3500,
-//			disableOnInteraction: false
-//		},
+		pagination: {
+			el: '.swiper-fraction',
+			type: 'fraction',
+			clickable: true,
+		},
+		autoplay: {
+			delay: 3500,
+			disableOnInteraction: false
+		},
 		creativeEffect: {
 			prev: {
 				shadow: true,
