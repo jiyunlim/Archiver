@@ -1,14 +1,33 @@
-<div id="cordial" class="modal-root udid hide">
-  <div class="modal">
-    <h1 class="modal-title">프로젝트 상세</h1>
-    <div class="modal-content">
-      <p class="cont-desc"></p>
-      <div class="projects-names">
-      	<ul>
-      		<li><img src="../<%= assetPath %>/images/prj-names(1).jpg" alt=""></li>
-      	</ul>
-      </div>
-    </div>
-    <button class="modal-close"><i class="ico btn-close"></i></button>
-  </div>
+<div id="jobko" class="modal-root jobko hide">
+	<div class="modal">
+		<h1 class="modal-title">프로젝트 상세</h1>
+		<div class="modal-content">
+			<div class="projects-slides">
+				<div class="swiper-area auto">
+					<div class="swiper auto">
+						<div class="swiper-wrapper">
+							<%- include('../slides/_slide_history_04.ejs') %>
+						</div>
+						<!-- Add Pagination -->
+          	<div class="swiper-fraction"></div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<h2># 잡코리아 - 업무상세 </h2>
+				<ul>
+					<li class="project__content">
+						<p class="txt__title">투입기간</p>
+						<p class="txt__content">입사 ~ 2025-12</p>
+						<p class="txt__title">내용</p>
+						<p class="txt__content">잡코리아 & 게임잡 & 알바몬 상시 운영 <br>: PC / MO</p>
+						<p class="txt__content">2025 게임잡 공고 등록/공고뷰 UI 개선 <br>: PC 진행</p>
+						<p class="txt__title icon-skill">사용 스킬</p>
+						<p class="txt__content">html, css, jquery, javascript</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="modal-close"><i class="ico btn-close"></i></button>
+	</div>
 </div>

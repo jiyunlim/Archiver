@@ -34,5 +34,15 @@ button{
 	border: 0;
 }
 footer {
+	height: 100%;
+	font-size: 11px;
+	display: inline-flex;
+	justify-content: flex-end;
+	flex-direction: column;
 	padding: 15px;
+	color: #999;
+	a{
+		display: inline-block;
+		color: #999;
+	}
 }
