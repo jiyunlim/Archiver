@@ -224,27 +224,63 @@
 }
 
 .skt {
-		.modal-content {
-			display: flex;
-			align-items: center;
-			gap: 25px;
+	.modal-content {
+		display: flex;
+		align-items: center;
+		gap: 25px;
 
-			.swiper-fraction {
-				z-index: 5;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				text-align: center;
-				padding: 0 0 8px;
-				background-color: rgb(255 255 255 / 70%);
-				span{
-					font-size: 11px;
-					color: #666;
+		.swiper-fraction {
+			z-index: 5;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			padding: 0 0 8px;
+			background-color: rgb(255 255 255 / 70%);
+
+			span {
+				font-size: 11px;
+				color: #666;
+			}
+		}
+	}
+}
+
+.jobko {
+	.modal-content {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+
+		.projects-slides {
+			width: 500px;
+			max-width: none;
+			margin: 0 auto;
+
+			.auto {
+				height: auto;
+
+				.swiper-fraction {
+					z-index: 5;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					text-align: center;
+					padding: 0 0 8px;
+					background-color: rgb(255 255 255 / 70%);
+
+					span {
+						font-size: 11px;
+						color: #666;
+					}
 				}
 			}
 		}
 	}
+
+}
 
 @media screen and (max-width: 425px) {
 	.cordial {
@@ -302,13 +338,18 @@
 			}
 		}
 
-		&.skt {
+		&.skt,
+		&.jobko {
 			overflow: hidden;
 
 			.modal-content {
 				flex-direction: column;
 				gap: 15px;
 				height: calc(100% - 50px);
+				.projects-slides{
+					width: 100%;
+					overflow: hidden;
+				}
 
 				.content {
 					flex: 1;
