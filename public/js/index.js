@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (targetEl) {
 				targetEl.classList.remove("hide"); // 보이기
 				_tsBody.setAttribute('style', 'overflow: hidden;');
-			}else{
+			} else {
 				_tsBody.setAttribute('style', 'overflow: auto;');
 			}
 		});
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const _tsBtnClose = modal.querySelector('.modal-close');
 		const _tsContDiv = modal.querySelector('.modal');
 		const _tsBody = document.querySelector('body');
-		
+
 		if (_tsBtnClose && _tsContDiv) {
 			_tsBtnClose.addEventListener('click', (e) => {
 				e.stopPropagation();
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		observer: true,
 	});
 
-	var swiperAuto = new Swiper(".swiper.auto", {
+	const swiperAuto = new Swiper(".swiper.auto", {
 		grabCursor: true,
 		effect: "creative",
 		speed: 500,
@@ -95,6 +95,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		observeParents: true,
 		observer: true,
 	});
+	// ----
+	const today = new Date();
+
+	const day = today.getDate();
+	const month = today.getMonth() + 1;
+	const year = today.getFullYear();
+
+	const formattedDate = 
+				`<div class="date-mm-yy">${year}.${month < 10 ? '0' : ''}${month}</div>
+				<div class="date-dd">오늘은 ${day < 10 ? '0' : ''}${day} 일</div> `;
+
+	document.getElementById('current-date').innerHTML = formattedDate;
 
 	/*
 	// Swiper 초기화 함수 따로 분리

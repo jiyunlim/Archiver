@@ -168,43 +168,25 @@ i.ico {
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-
-.loader {
-	transition: all .5s;
-	height: 32px;
-	aspect-ratio: 2.5;
-	--_g: no-repeat radial-gradient(farthest-side, #ddd 90%, #0000);
-	background: var(--_g), var(--_g), var(--_g), var(--_g);
-	background-size: 20% 50%;
-	animation: l43 1s infinite linear;
-}
-
-@keyframes l43 {
-	0% {
-		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+// ----
+.current-date-container{
+	box-shadow: $shadow;
+	border-radius: 16px;
+	padding: 24px;
+	margin-top: 20px;
+	.date-mm-yy{
+		
 	}
-
-	16.67% {
-		background-position: calc(0*100%/3) 0, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	.date-dd{
+		font-size: $ft-title;
+		font-weight: bold;
 	}
-
-	33.33% {
-		background-position: calc(0*100%/3) 100%, calc(1*100%/3) 0, calc(2*100%/3) 50%, calc(3*100%/3) 50%
-	}
-
-	50% {
-		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 100%, calc(2*100%/3) 0, calc(3*100%/3) 50%
-	}
-
-	66.67% {
-		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 100%, calc(3*100%/3) 0
-	}
-
-	83.33% {
-		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 100%
-	}
-
-	100% {
-		background-position: calc(0*100%/3) 50%, calc(1*100%/3) 50%, calc(2*100%/3) 50%, calc(3*100%/3) 50%
+	.ico-arrow{
+		margin: 0 auto;
+		background-image: url($ico-arrow-line);
+		background-size: 14px;
+		background-position: center;
 	}
 }
+
+
