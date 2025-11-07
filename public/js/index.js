@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const formattedDate = 
 				`<div class="date-mm-yy">${year}.${month < 10 ? '0' : ''}${month}</div>
-				<div class="date-dd">오늘은 ${day < 10 ? '0' : ''}${day} 일</div> `;
+				<div class="date-dd">Today is ${day < 10 ? '0' : ''}${day}</div> `;
 
 	document.getElementById('current-date').innerHTML = formattedDate;
 

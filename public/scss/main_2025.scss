@@ -1,7 +1,7 @@
 @charset"UTF-8";
 
-@use "variation" as *;
-@use "modal" ;
+@use "variation"as *;
+@use "modal";
 
 html,
 body {
@@ -18,9 +18,10 @@ body {
 		position: relative;
 		margin: 0 auto;
 		text-align: center;
-		
+
 	}
 }
+
 // 탐라 구분선
 .timeLine-box {
 	margin: 0 auto;
@@ -28,10 +29,12 @@ body {
 	flex-direction: column;
 	flex: 1;
 	align-items: center;
+
 	.timeLine-dot {
 		width: auto;
 		height: auto;
-		.ico{
+
+		.ico {
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -39,24 +42,29 @@ body {
 			justify-content: center;
 			align-items: center;
 			background-position: center;
-			&-cat{
+
+			&-cat {
 				@include icons($w: 60px, $h: 60px);
 				background-image: url($ico-cat);
 			}
-			&-hurry{
+
+			&-hurry {
 				@include icons($w: 60px, $h: 60px);
 				background-image: url($ico-hurry);
 			}
-			&-graphic{
+
+			&-graphic {
 				@include icons($w: 60px, $h: 60px);
 				background-image: url($ico-graphic);
 			}
-			&-discussion{
+
+			&-discussion {
 				@include icons($w: 60px, $h: 60px);
 				background-image: url($ico-discussion);
 			}
 		}
 	}
+
 	.timeLine-line {
 		width: 1px;
 		height: 100%;
@@ -67,21 +75,24 @@ body {
 
 [class*="btn-"] {
 	cursor: pointer;
+
 	&:hover {
 		font-weight: bold;
 	}
 }
 
-.div-history{
-	.history-yymm{
+.div-history {
+	.history-yymm {
 		cursor: pointer;
 		font-size: $ft-normal;
 		display: inline-block;
 		width: 200px;
 		line-height: 24px;
-		&:hover{
+
+		&:hover {
 			opacity: 0.6;
 		}
+
 		.ico-arrow {
 			background-position: center;
 			background-size: 14px;
@@ -96,11 +107,11 @@ body {
 	width: auto;
 	margin: 0 auto;
 
-	&.active{
+	&.active {
 		transition: all .3s;
 		overflow: inherit;
 		height: auto;
-		padding-top: 16px ;
+		padding-top: 16px;
 		padding-bottom: 16px;
 	}
 
@@ -120,12 +131,15 @@ body {
 		padding: 15px;
 		box-shadow: $shadow;
 		border-radius: 8px;
+
 		p {
 			position: relative;
 		}
+
 		.sub-title {
 			font-weight: bold;
 			padding: 4px 0;
+
 			& ~ p {
 				&::before {
 					content: "";
@@ -140,12 +154,14 @@ body {
 			display: inline-flex;
 			align-items: center;
 			margin-top: 10px;
-			gap:4px;
+			gap: 4px;
 			color: $jobko-color;
 			font-weight: 600;
+
 			&::before {
 				content: none !important;
 			}
+
 			.ico-popup {
 				background-image: url($ico-popup);
 			}
@@ -153,11 +169,12 @@ body {
 	}
 
 }
+
 // ----
 .hidden_div {
 	height: 0;
 	overflow: hidden;
-	transition: all .3s ;
+	transition: all .3s;
 }
 
 i.ico {
@@ -168,25 +185,45 @@ i.ico {
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+
 // ----
-.current-date-container{
+.current-date-container {
 	box-shadow: $shadow;
 	border-radius: 16px;
 	padding: 24px;
 	margin-top: 20px;
-	.date-mm-yy{
-		
+
+	.date-mm-yy {
+		font-size: $ft-normal;
 	}
-	.date-dd{
+
+	.date-dd {
 		font-size: $ft-title;
 		font-weight: bold;
 	}
-	.ico-arrow{
+
+	.ico-arrow {
 		margin: 0 auto;
 		background-image: url($ico-arrow-line);
 		background-size: 14px;
 		background-position: center;
 	}
+
+	.my-state {
+		display: inline-flex;
+		align-content: center;
+		font-size: 12px;
+		color: #666;
+		padding-top: 10px;
+		gap:4px;
+
+		.badge {
+			background-color: $jobko-color;
+			border-radius: 4px;
+			padding: 2px 8px;
+			font-size: 10px;
+			color: #fff;
+			font-weight: bold;
+		}
+	}
 }
-
-
