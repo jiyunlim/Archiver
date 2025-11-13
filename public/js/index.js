@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		observeParents: true,
 		observer: true,
 	});
+	
 	// ----
 	const today = new Date();
 
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const formattedDate = 
 				`<div class="date-mm-yy">${year}.${month < 10 ? '0' : ''}${month}</div>
-				<div class="date-dd">Today is ${day < 10 ? '0' : ''}${day}</div> `;
+				<div class="date-dd">Today ${day < 10 ? '0' : ''}${day}</div> `;
 
 	document.getElementById('current-date').innerHTML = formattedDate;
 
