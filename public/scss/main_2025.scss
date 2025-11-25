@@ -11,23 +11,21 @@ body {
 
 #wrap {
 	padding: 0 20px;
-	max-width: 423px;
-	margin: 0 auto;
+	//	max-width: 423px;
 
 	div[class*="history-0"] {
 		position: relative;
 		margin: 0 auto;
-		text-align: center;
-
+		display: flex;
+		flex-wrap: wrap;
 	}
 }
 
 // 탐라 구분선
 .timeLine-box {
-	margin: 0 auto;
+	max-width: 146px;
 	display: flex;
 	flex-direction: column;
-	flex: 1;
 	align-items: center;
 
 	.timeLine-dot {
@@ -86,7 +84,7 @@ body {
 		cursor: pointer;
 		font-size: $ft-normal;
 		display: inline-block;
-		width: 200px;
+		width: 100%;
 		line-height: 24px;
 
 		&:hover {
@@ -97,6 +95,26 @@ body {
 			background-position: center;
 			background-size: 14px;
 			background-image: url($ico-arrow-line);
+		}
+	}
+
+	.div-accodiant {
+		padding: 20px 15px 20px 20px;
+		scroll-behavior: smooth;
+		display: flex;
+		align-items: flex-start;
+		text-align: left;
+		width: auto;
+		flex: 1;
+
+		.swiper-slide {
+			word-break: break-all;
+			box-shadow: $shadow;
+			padding: 20px;
+			border-radius: 8px;
+			&.single-slide{
+				width: 350px;
+			}
 		}
 	}
 }
@@ -115,22 +133,21 @@ body {
 		padding-bottom: 16px;
 	}
 
-	h3.title {
-		font-size: $ft-normal;
-		text-align: center;
-		width: 200px;
-		margin: 0 auto;
-	}
-
 	.detail {
 		display: block;
+		width: 360px;
+		height: auto;
 		text-align: left;
 		font-size: $ft-small;
 		line-height: 1.6;
-		margin-top: 15px;
 		padding: 15px;
 		box-shadow: $shadow;
 		border-radius: 8px;
+
+		h3.title {
+			font-size: $ft-normal;
+			width: 100%;
+		}
 
 		p {
 			position: relative;
@@ -191,7 +208,7 @@ i.ico {
 	box-shadow: $shadow;
 	border-radius: 16px;
 	padding: 24px;
-	margin-top: 20px;
+	margin: 0 -20px;
 
 	.date-mm-yy {
 		font-size: $ft-normal;
@@ -215,7 +232,7 @@ i.ico {
 		font-size: 12px;
 		color: #666;
 		padding-top: 10px;
-		gap:4px;
+		gap: 4px;
 
 		.badge {
 			background-color: $jobko-color;

@@ -1,24 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 	// ----
-	const divHistories = document.querySelectorAll('.div-history');
-
-	document.addEventListener('click', (e) => {
-		divHistories.forEach(div => {
-			const hiddenDiv = div.querySelector('.hidden_div');
-			if (!hiddenDiv) return;
-
-			if (div.contains(e.target)) {
-
-				hiddenDiv.classList.toggle('active');
-			} else {
-				//영역 외 클릭 닫기
-				hiddenDiv.classList.remove('active');
-			}
-		});
-	});
+	//	const divHistories = document.querySelectorAll('.div-history');
+	//
+	//	document.addEventListener('click', (e) => {
+	//		divHistories.forEach(div => {
+	//			const hiddenDiv = div.querySelector('.hidden_div');
+	//			if (!hiddenDiv) return;
+	//
+	//			if (div.contains(e.target)) {
+	//
+	//				hiddenDiv.classList.toggle('active');
+	//			} else {
+	//				//영역 외 클릭 닫기
+	//				hiddenDiv.classList.remove('active');
+	//			}
+	//		});
+	//	});
 
 	// ----
+	/*
 	const modalButtons = document.querySelectorAll("[data-pop]");
 
 	modalButtons.forEach(button => {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				_tsBody.setAttribute('style', 'overflow: auto;');
 			});
 		}
-	});
+	}); */
 	// ----
 	const swiperCard = new Swiper('.swiper.card', {
 		slidesPerView: 1,
@@ -95,7 +96,41 @@ document.addEventListener('DOMContentLoaded', function () {
 		observeParents: true,
 		observer: true,
 	});
-	
+	// div-acodiant
+	const accodiantEls = document.querySelectorAll(".div-accodiant");
+	if (!accodiantEls.length) return;
+
+	accodiantEls.forEach((el) => {
+		const slideCount = el.querySelectorAll(".swiper-slide").length;
+		const existingInstance = el.swiper; // Swiper가 DOM 노드에 보관하는 인스턴스
+
+		if (slideCount > 1) {
+			if (existingInstance) existingInstance.destroy(true, true);
+			new Swiper(el, {
+				slidesPerView: 1,
+				spaceBetween: 20,
+				breakpoints: {
+					640: { slidesPerView: 1.5, spaceBetween: 20 },
+					768: { slidesPerView: 1.5, spaceBetween: 20 },
+					1024: { slidesPerView: 3.5, spaceBetween: 20 },
+				},
+				pagination: { el: el.querySelector(".swiper-fraction"), type: "fraction", clickable: true },
+				navigation: {
+					nextEl: el.querySelector('.swiper-button-next'),
+					prevEl: el.querySelector('.swiper-button-prev'),
+				},
+			});
+		} else {
+			if (existingInstance) {
+				existingInstance.destroy(true, true);
+			}
+			// 슬라이드가 1개 이하일 때 클래스명 추가
+			const slides = el.querySelectorAll(".swiper-slide");
+			slides.forEach(slide => {
+				slide.classList.add("single-slide");
+			});
+		}
+	});
 	// ----
 	const today = new Date();
 
@@ -103,63 +138,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	const month = today.getMonth() + 1;
 	const year = today.getFullYear();
 
-	const formattedDate = 
-				`<div class="date-mm-yy">${year}.${month < 10 ? '0' : ''}${month}</div>
-				<div class="date-dd">Today ${day < 10 ? '0' : ''}${day}</div> `;
+	const formattedDate = `<div class="date-mm-yy">${year}.${month < 10 ? '0' : ''}${month}</div> 
+												<div class="date-dd">Today ${day < 10 ? '0' : ''}${day}</div> `;
 
 	document.getElementById('current-date').innerHTML = formattedDate;
 
-	/*
-	// Swiper 초기화 함수 따로 분리
-	function initSwiper() {
-		new Swiper('.main-swiper', {
-			slidesPerView: 4,
-			spaceBetween: 30,
-			speed: 800,
-			loop: true,
-			pagination: {
-				el: ".swiper-pagination",
-				type: "progressbar",
-			},
-			autoplay: {
-				delay: 4000,
-				disableOnInteraction: false
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev'
-			},
-			scrollbar: {
-				el: ".swiper-pagination"
-			}
-		});
-	}*/
+	// ----
 
-	// title 속성 값을 가져와 <h2> 태그 내부에 삽입
-	/*
-	setTimeout(() => {
-	  var components = document.querySelectorAll(".component-in");
-	  components.forEach(function (component) {
-	    var titleValue = component.getAttribute("title"); // title 속성 값 가져오기
-	    var heading = component.querySelector("h2.text-title");
-	    if (heading && titleValue) {
-	      heading.textContent = titleValue; // 값 삽입
-	    }
-	  });
-	}, 1300);
-	*/
 
-	/*
-	var _navBtn = document.querySelectorAll('nav button');
-	_navBtn.addEventListener("click", () => {
-	  var _this = document.querySelector('nav');
-	//  _navBtn.forEach(function (nav) {
-	    _this.classList.addClass("active");
-	//  });
-	});
-	*/
-
-	// Code to run after the DOM is ready
 	console.log("I am Ready");
 
 });
