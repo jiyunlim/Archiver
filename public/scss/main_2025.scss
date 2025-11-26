@@ -10,14 +10,15 @@ body {
 }
 
 #wrap {
-	padding: 0 20px;
-	//	max-width: 423px;
+	// padding: 0 20px;
 
 	div[class*="history-0"] {
 		position: relative;
 		margin: 0 auto;
+		padding: 20px;
 		display: flex;
 		flex-wrap: wrap;
+		background-color: #f5f9ff;
 	}
 }
 
@@ -87,10 +88,6 @@ body {
 		width: 100%;
 		line-height: 24px;
 
-		&:hover {
-			opacity: 0.6;
-		}
-
 		.ico-arrow {
 			background-position: center;
 			background-size: 14px;
@@ -112,8 +109,12 @@ body {
 			box-shadow: $shadow;
 			padding: 20px;
 			border-radius: 8px;
+			background-color: #fff;
 			&.single-slide{
 				width: 350px;
+			}
+			&:hover{
+				background-color: #f8f8f8;
 			}
 		}
 	}
@@ -143,6 +144,7 @@ body {
 		padding: 15px;
 		box-shadow: $shadow;
 		border-radius: 8px;
+		background-color: #fff;
 
 		h3.title {
 			font-size: $ft-normal;
@@ -206,9 +208,7 @@ i.ico {
 // ----
 .current-date-container {
 	box-shadow: $shadow;
-	border-radius: 16px;
-	padding: 24px;
-	margin: 0 -20px;
+	padding: 25px 25px 15px;
 
 	.date-mm-yy {
 		font-size: $ft-normal;
@@ -224,6 +224,13 @@ i.ico {
 		background-image: url($ico-arrow-line);
 		background-size: 14px;
 		background-position: center;
+		cursor: pointer;
+		&:hover{
+			&+.current-state-info {
+				overflow: visible;
+				height: 30px;
+			}
+		}
 	}
 
 	.my-state {
@@ -243,4 +250,32 @@ i.ico {
 			font-weight: bold;
 		}
 	}
+	.current-state-info {
+		overflow: hidden;
+		height: 0;
+		transition: all .3s;
+		line-height: 30px;
+		font-size: 12px;
+	}
+}
+
+.bg-ring.one {
+	width: 500px;
+	height: 500px;
+	position: fixed;
+	top: -10%;
+	left: -10%;
+	border: 60px solid #f5f9ff;
+	border-radius: 50%;
+	z-index: -1;
+}
+.bg-ring.two {
+	width: 300px;
+	height: 300px;
+	position: fixed;
+	bottom: -10%;
+	right:10%;
+	border: 50px solid #f5f9ff;
+	border-radius: 50%;
+	z-index: -1;
 }
