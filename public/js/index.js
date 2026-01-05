@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	//	});
 
 	// ----
-	/*
+	/**/
 	const modalButtons = document.querySelectorAll("[data-pop]");
 
 	modalButtons.forEach(button => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				_tsBody.setAttribute('style', 'overflow: auto;');
 			});
 		}
-	}); */
+	}); 
 	// ----
 	const swiperCard = new Swiper('.swiper.card', {
 		slidesPerView: 1,
@@ -145,6 +145,107 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// ----
 
+	// 메모 기능
+	const memoStorageKey = 'userMemos';
+	
+	// 메모 저장 함수
+	function saveMemo(text) {
+		if (!text.trim()) {
+			alert('메모 내용을 입력해주세요.');
+			return;
+		}
+		
+		const memos = getMemos();
+		const newMemo = {
+			id: Date.now(),
+			text: text.trim(),
+			date: new Date().toISOString()
+		};
+		memos.push(newMemo);
+		localStorage.setItem(memoStorageKey, JSON.stringify(memos));
+		renderMemos();
+		document.getElementById('memoInput').value = '';
+	}
+	
+	// 메모 불러오기 함수
+	function getMemos() {
+		const stored = localStorage.getItem(memoStorageKey);
+		return stored ? JSON.parse(stored) : [];
+	}
+	
+	// 메모 삭제 함수
+	function deleteMemo(id) {
+		if (confirm('이 메모를 삭제하시겠습니까?')) {
+			const memos = getMemos();
+			const filtered = memos.filter(memo => memo.id !== id);
+			localStorage.setItem(memoStorageKey, JSON.stringify(filtered));
+			renderMemos();
+		}
+	}
+	
+	// 메모 목록 렌더링 함수
+	function renderMemos() {
+		const memoList = document.getElementById('memoList');
+		const memos = getMemos();
+		
+		if (memos.length === 0) {
+			memoList.innerHTML = '<p class="memo-empty">저장된 메모가 없습니다.</p>';
+			return;
+		}
+		
+		memoList.innerHTML = memos.map(memo => {
+			const date = new Date(memo.date);
+			const formattedDate = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+			return `
+				<div class="memo-item">
+					<div class="memo-item-content">
+						<p class="memo-text">${memo.text.replace(/\n/g, '<br>')}</p>
+						<span class="memo-date">${formattedDate}</span>
+					</div>
+					<button class="memo-delete-btn" onclick="deleteMemo(${memo.id})">삭제</button>
+				</div>
+			`;
+		}).reverse().join('');
+	}
+	
+	// 전역 함수로 등록 (HTML에서 onclick으로 사용하기 위해)
+	window.deleteMemo = deleteMemo;
+	
+	// 저장 버튼 이벤트
+	const saveMemoBtn = document.getElementById('saveMemoBtn');
+	const memoInput = document.getElementById('memoInput');
+	
+	if (saveMemoBtn && memoInput) {
+		saveMemoBtn.addEventListener('click', () => {
+			saveMemo(memoInput.value);
+		});
+		
+		// Enter 키로 저장 (Shift+Enter는 줄바꿈)
+		memoInput.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter' && !e.shiftKey) {
+				e.preventDefault();
+				saveMemo(memoInput.value);
+			}
+		});
+		
+		// 모달이 열릴 때 메모 목록 로드
+		const memoModal = document.getElementById('modalExample');
+		if (memoModal) {
+			const observer = new MutationObserver((mutations) => {
+				mutations.forEach((mutation) => {
+					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+						if (!memoModal.classList.contains('hide')) {
+							renderMemos();
+						}
+					}
+				});
+			});
+			observer.observe(memoModal, { attributes: true });
+		}
+		
+		// 초기 로드
+		renderMemos();
+	}
 
 	console.log("I am Ready");
 

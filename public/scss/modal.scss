@@ -13,7 +13,8 @@
 	top: 0;
 	left: 0;
 	background-color: rgb(0 0 0 / 50%);
-
+	z-index: 1;
+	
 	.modal {
 		min-width: 560px;
 		min-height: 420px;
@@ -51,6 +52,141 @@
 						width: 35px;
 						height: 30px;
 						background-image: url($ico-soft-skill)
+					}
+				}
+			}
+		}
+
+		// 메모 기능 스타일
+		.memo-content {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			max-height: 600px;
+			overflow-y: auto;
+		}
+
+		.memo-input-area {
+			border-bottom: 1px solid #eee;
+			padding-bottom: 20px;
+
+			.memo-textarea {
+				width: 100%;
+				min-height: 120px;
+				padding: 12px;
+				border: 1px solid #ddd;
+				border-radius: 8px;
+				font-size: 14px;
+				font-family: inherit;
+				resize: vertical;
+				box-sizing: border-box;
+
+				&:focus {
+					outline: none;
+					border-color: #03A9F4;
+				}
+			}
+
+			.memo-actions {
+				margin-top: 12px;
+				display: flex;
+				justify-content: flex-end;
+
+				.btn-memo-save {
+					padding: 10px 24px;
+					background-color: #03A9F4;
+					color: #fff;
+					border: none;
+					border-radius: 6px;
+					font-size: 14px;
+					cursor: pointer;
+					transition: background-color 0.2s;
+
+					&:hover {
+						background-color: #0288d1;
+					}
+
+					&:active {
+						background-color: #0277bd;
+					}
+				}
+			}
+		}
+
+		.memo-list-area {
+			flex: 1;
+
+			.memo-list-title {
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: 16px;
+				color: #333;
+			}
+
+			.memo-list {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+
+				.memo-empty {
+					text-align: center;
+					color: #999;
+					padding: 40px 20px;
+					font-size: 14px;
+				}
+
+				.memo-item {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					padding: 16px;
+					background-color: #f8f9fa;
+					border-radius: 8px;
+					border-left: 4px solid #03A9F4;
+					transition: box-shadow 0.2s;
+
+					&:hover {
+						box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+					}
+
+					.memo-item-content {
+						flex: 1;
+						min-width: 0;
+
+						.memo-text {
+							font-size: 14px;
+							color: #333;
+							line-height: 1.6;
+							word-wrap: break-word;
+							margin-bottom: 8px;
+							white-space: pre-wrap;
+						}
+
+						.memo-date {
+							font-size: 12px;
+							color: #999;
+						}
+					}
+
+					.memo-delete-btn {
+						margin-left: 12px;
+						padding: 6px 12px;
+						background-color: #ff5252;
+						color: #fff;
+						border: none;
+						border-radius: 4px;
+						font-size: 12px;
+						cursor: pointer;
+						white-space: nowrap;
+						transition: background-color 0.2s;
+
+						&:hover {
+							background-color: #ff1744;
+						}
+
+						&:active {
+							background-color: #d50000;
+						}
 					}
 				}
 			}

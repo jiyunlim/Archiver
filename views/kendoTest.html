@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kendo UI using CDN</title>
+
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/12.3.0/default/default-main.css" />
+
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2025.4.1217/js/kendo.all.min.js"></script>
+    </head>
+    <body>
+        <button id="testBtn">확인</button>
+        <input id="ddl" />
+
+        <div id="grid"></div>
+        <script>
+            $("#testBtn").kendoButton();
+
+            $("#ddl").kendoDropDownList({
+                dataTextField: "text",
+                dataValueField: "value",
+                dataSource: [
+                    { text: "Item1", value: "1" },
+                    { text: "Item2", value: "2" }
+                ]
+            });
+            $("#grid").kendoGrid({
+                columns: [
+                    { field: "title", title: "제목" },
+                    { field: "writer", title: "작성자" },
+                    { field: "date", title: "작성일" }
+                ],
+                dataSource: {
+                    data: [
+                    { title: "공지사항", writer: "관리자", date: "2024-01-01" }
+                    ]
+                }
+            });
+	    </script>	  
+    </body>
+</html>
