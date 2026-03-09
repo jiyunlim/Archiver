@@ -1,0 +1,8 @@
+<%
+const history03ContentProjects = [
+	{ title: '# SKT T DirectShop - 업무상세 ', period: '입사 ~ 2023-12', useIcon: false, contentLabel: '내용', items: ['- T DirectShop 상시 운영 업무 : PC / MO / InApp ', '- 2022 T DirectShop 판매기능 고도화 : 모바일 진행', '- 고도화_2022 & 2023 T DirectShop : 모바일 진행 (InApp) *1차 무선, 2차 유선'] }
+];
+%>
+<% history03ContentProjects.forEach(function(project) { %>
+<%- include('_slide_project_item.ejs', { project: project }) %>
+<% }); %>

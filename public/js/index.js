@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				breakpoints: {
 					640: { slidesPerView: 1.5, spaceBetween: 20 },
 					768: { slidesPerView: 1.5, spaceBetween: 20 },
-					1024: { slidesPerView: 3.5, spaceBetween: 20 },
+					1024: { slidesPerView: 2.5, spaceBetween: 20 },
 				},
 				pagination: { el: el.querySelector(".swiper-fraction"), type: "fraction", clickable: true },
 				navigation: {

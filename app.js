@@ -12,7 +12,7 @@ app.locals.assetPath = '';
 
 // 라우트
 app.get('/', (req, res) => res.render('index'));
-app.get('/about', (req, res) => res.render('about'));
+app.get('/index.html', (req, res) => res.render('index'));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

@@ -1,7 +1,7 @@
 ## 2025.04 - 파일생성
 ## https://jiyunlim.github.io/Archiver/dist/
 ## 2025.10 - ejs 환경세팅
-## Archive/ 3000 실행 + scss 컴파일 : npm start
+## Archive/ 3333 실행 + scss 컴파일 : npm start
 ##
 ## 중요
 Archiver/
@@ -9,13 +9,18 @@ Archiver/
 ├─ package.json
 ├─ views/
 │  ├─ index.ejs
-│  ├─ about.ejs          # (사용안함)
 │  └─ partials/
 ├─ public/
 │  ├─ scss/
 │  └─ css/
-├─ convert.js            # new 스크립트 
+├─ convert.js            # new 스크립트
 └─ dist/                 # 변환된 HTML 폴더
+
+# 스크립트
+- `npm start`      : 로컬 개발 (convert + sass watch + nodemon)
+- `npm run serve`  : 서버만 실행 (배포용, Render 등)
+- `npm run convert`: EJS → HTML 변환만
+- `npm run sass`   : SCSS watch만
 
 
 # notice

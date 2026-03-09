@@ -3,6 +3,6 @@ services:
     name: archive-portfolio
     env: node
     buildCommand: "npm install"
-    startCommand: "npm start"
+    startCommand: "npm run serve"
     plan: free
     autoDeploy: true

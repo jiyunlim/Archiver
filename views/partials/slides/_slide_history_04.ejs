@@ -1,13 +1,9 @@
+<%/* 이미지 슬라이드 데이터 - jobko-img */ %>
+<%
+const history04Images = ['jobko-img-01', 'jobko-img-02', 'jobko-img-03', 'jobko-img-04'];
+%>
+<% history04Images.forEach(function(img) { %>
 <div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/jobko-img-01.png" alt="">
+	<img src="../<%= assetPath %>/images/<%= img %>.png" alt="">
 </div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/jobko-img-02.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/jobko-img-03.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/jobko-img-04.png" alt="">
-</div>
-
+<% }); %>

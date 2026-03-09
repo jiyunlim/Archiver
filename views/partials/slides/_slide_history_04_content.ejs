@@ -1,0 +1,8 @@
+<%
+const history04ContentProjects = [
+	{ title: '# 잡코리아 - 업무상세 ', period: '입사 ~ 2025-12', useIcon: false, contentLabel: '내용', items: ['- 잡코리아 & 게임잡 & 알바몬 상시 운영 : PC / MO', '- 2025 게임잡 공고 등록/공고뷰 UI 개선 : PC 진행'] }
+];
+%>
+<% history04ContentProjects.forEach(function(project) { %>
+<%- include('_slide_project_item.ejs', { project: project }) %>
+<% }); %>

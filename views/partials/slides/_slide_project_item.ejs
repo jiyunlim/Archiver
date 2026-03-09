@@ -1,0 +1,15 @@
+<div class="swiper-slide">
+	<div class="content">
+		<h2><%= project.title %></h2>
+		<ul>
+			<li class="project__content">
+				<p class="txt__title"><% if (project.useIcon) { %><i class="fas fa-check"></i><% } %>기간</p>
+				<p class="txt__content"><%= project.period %></p>
+				<p class="txt__title"><% if (project.useIcon) { %><i class="fas fa-check"></i><% } %><%= project.contentLabel || '내용 / 담당 영역' %></p>
+				<% project.items.forEach(function(item) { %>
+				<p class="txt__content"><%- item %></p>
+				<% }); %>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,21 +1,9 @@
+<%/* 이미지 슬라이드 데이터 - tds-img */ %>
+<%
+const history03Images = ['tds-img-02', 'tds-img-03', 'tds-img-04', 'tds-img-05', 'tds-img-06', 'tds-img-07', 'tds-img-08'];
+%>
+<% history03Images.forEach(function(img) { %>
 <div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-02.png" alt="">
+	<img src="../<%= assetPath %>/images/<%= img %>.png" alt="">
 </div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-03.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-04.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-05.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-06.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-07.png" alt="">
-</div>
-<div class="swiper-slide">
-	<img src="../<%= assetPath %>/images/tds-img-08.png" alt="">
-</div>
+<% }); %>

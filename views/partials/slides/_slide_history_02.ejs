@@ -1,0 +1,8 @@
+<%
+const history02Projects = [
+	{ title: '# 자사 결제(PG)시스템 사이트 유지보수 ', period: '입사 ~ 2021-09', useIcon: false, items: ['- 결제(PG)시스템 사이트 퍼블리싱'] }
+];
+%>
+<% history02Projects.forEach(function(project) { %>
+<%- include('_slide_project_item.ejs', { project: project }) %>
+<% }); %>

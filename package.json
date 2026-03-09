@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "EJS portfolio project with SCSS compile",
   "main": "app.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "convert": "node convert.js",
     "sass": "npx sass --watch ./public/scss:./public/css --style=compressed",
     "dev": "nodemon app.js",
+    "serve": "node app.js",
     "start": "npm-run-all --parallel convert sass dev"
   },
   "dependencies": {
