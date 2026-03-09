@@ -5,14 +5,12 @@
 <body>
 	<section id="wrap">
 		<%- include('partials/current_date.ejs') %>
-		<%- include('partials/history_04.ejs') %>
-		<%- include('partials/history_03.ejs') %>
-		<%- include('partials/history_02.ejs') %>
-		<%- include('partials/history_01.ejs') %>
+		<%- include('partials/history.ejs') %>
 	</section>
 
+	<%- include('partials/footer.ejs') %>
+
 	<!-- Modal-root -->
-	<%- include('partials/modal/_modal_example.ejs.html') %>
 	<!-- script -->
 	<script src="../<%= assetPath %>/js/index.js"></script>
 	<script src="../<%= assetPath %>/js/lib/swiper-bundle.11.2.10.min.js"></script>

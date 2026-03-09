@@ -1,0 +1,121 @@
+<% const histories = [ 
+  {
+    iconClass: 'ico-subway',
+    historyClass: 'history-05',
+    period: '2026.01 ~ 2026.02 (프리랜서)',
+    companyLine: '기업명 : 메가존 . 2개월 ',
+    roleLine: '직무 :  PC.MO 웹퍼블리싱 (파견)',
+    duties: [
+      '일신 비츠온 MRO PC.MO 구축',
+    ],
+    slidePartial: 'slides/_slide_history_04_content.ejs',
+    showSlide: false,
+    showControls: false,
+    bgRingClass: 'two'
+  },
+  {
+    iconClass: 'ico-discussion',
+    historyClass: 'history-04',
+    period: '2024.03 ~ 2025.12 (프리랜서)',
+    companyLine: '기업명 : 잡코리아 . 1년 9개월 ',
+    roleLine: '직무 : UI 웹.모바일 퍼블리싱 담당 (파견)',
+    duties: [
+      '잡코리아, 게임잡, 알바몬 이벤트 ui 작업 및 사이트 운영',
+      '퍼블리싱 담당 ( Web , WebMobile)'
+    ],
+    slidePartial: 'slides/_slide_history_04_content.ejs',
+    showControls: false,
+    showSlide: true,
+    bgRingClass: 'two'
+  },
+  {
+    iconClass: 'ico-graphic',
+    historyClass: 'history-03',
+    period: '2021.10 - 2023.12',
+    companyLine: '기업명 : 이모션 글로벌 . 2년 2개월 ',
+    roleLine: '직무 : UI 웹.모바일 퍼블리싱 담당',
+    duties: [
+      'T direct Shop 개선(고도화) 및 운영',
+      '퍼블리싱 담당 (InApp , Web , WebMobile)'
+    ],
+    slidePartial: 'slides/_slide_history_03_content.ejs',
+    showControls: false,
+    showSlide: true,
+    bgRingClass: ''
+  },
+  {
+    iconClass: 'ico-hurry',
+    historyClass: 'history-02',
+    period: '2021.05 - 2021.09',
+    companyLine: '기업명 : 유디아이디 . 5개월',
+    roleLine: '직무 : UI 웹.모바일 퍼블리싱 담당',
+    duties: [
+      '자사 홈페이지 신규 구축 및 유지보수 UI 담당 resource 관리'
+    ],
+    slidePartial: 'slides/_slide_history_02.ejs',
+    showControls: false,
+    showSlide: true,
+    bgRingClass: ''
+  },
+  {
+    iconClass: 'ico-cat',
+    historyClass: 'history-01',
+    period: ' 2018.03 - 2021.05',
+    companyLine: '기업명 : 코디얼 . 3년 2개월 ',
+    roleLine: '직무 : UI 웹.모바일 퍼블리싱 담당',
+    duties: [
+      '* 고객 맞춤 그룹웨어 디자인 ui ',
+      '* 사내 사이트 리뉴얼 및 유지보수',
+      '* \'Moim\'_2020 (사내솔루션 개발) 등'
+    ],
+    slidePartial: 'slides/_slide_history_01.ejs',
+    showControls: true,
+    showSlide: true,
+    bgRingClass: 'one'
+  },
+  
+]; %>
+
+<% histories.forEach(function(item) { %>
+  <div class="timeLine-box">
+    <div class="timeLine-line"></div>
+    <div class="timeLine-dot"><i class="ico <%= item.iconClass %>"></i></div>
+  </div>
+
+  <div class="div-history <%= item.historyClass %>">
+    <h2 class="history-yymm"><%= item.period %></h2>
+    <article class="hidden_div history-content active">
+      <div class="detail">
+        <h3 class="title">
+          경력 정보 & 주요 업무
+        </h3>
+        <p><%= item.companyLine %></p>
+        <p><%= item.roleLine %></p>
+        <p class="sub-title">수행업무</p>
+        <% item.duties.forEach(function(text) { %>
+          <p><%= text %></p>
+        <% }); %>
+        <!-- <p class="btn-popup" data-pop="">전체 프로젝트 상세 <i class="ico ico-popup"></i></p> -->
+      </div>
+    </article>
+    <% if (item.showSlide) { %>
+    <div class="swiper div-accodiant">
+      <div class="swiper-wrapper">
+        <%- include(item.slidePartial) %>
+      </div>
+      <% if (item.showControls) { %>
+        <!-- Add Pagination -->
+        <div class="swiper-fraction"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      <% } %>
+    </div>
+    <% } %>
+  </div>
+
+  <% if (item.bgRingClass) { %>
+    <div class="bg-ring <%= item.bgRingClass %>"></div>
+  <% } %>
+<% }); %>
+
