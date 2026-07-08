@@ -4,6 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const fileInclude = require('gulp-file-include');
+const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
@@ -25,6 +26,7 @@ function htmlInclude() {
     .pipe(fileInclude({
       basepath: '@file'
     }))
+    .pipe(replace(/\.\.\/assets\//g, 'assets/'))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 }
