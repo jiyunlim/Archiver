@@ -1,0 +1,44 @@
+.popup-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  background: rgba(0, 0, 0, 0.55);
+
+  &.active {
+    display: flex;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+
+  .modal-content {
+    position: relative;
+    width: calc(100vw - 15rem);
+    max-height: 90vh;
+    padding: $spacing-lg;
+    border-radius: $radius-lg;
+    background-color: #fff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    z-index: 1;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: $spacing-md;
+    right: $spacing-md;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: transparent;
+    color: $secondary;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

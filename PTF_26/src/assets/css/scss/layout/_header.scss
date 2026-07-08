@@ -1,0 +1,49 @@
+/* Header Layout */
+header {
+  background-color: $secondary;
+  color: white;
+  padding: $spacing-lg $spacing-md;
+  box-shadow: $shadow-md;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: $font-size-lg;
+    font-weight: bold;
+    
+    a {
+      color: white;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  
+  nav {
+    ul {
+      display: flex;
+      gap: $spacing-lg;
+      
+      li {
+        a {
+          color: white;
+          transition: $transition-base;
+          
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}

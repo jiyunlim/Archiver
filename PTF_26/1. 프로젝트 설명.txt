@@ -1,0 +1,264 @@
+================================================================================
+퍼블리싱 포트폴리오 프로젝트 - 환경 설정 및 사용 설명서
+================================================================================
+
+📁 프로젝트 폴더 구조
+================================================================================
+
+PTF_26/
+├── src/                              # 개발 소스 파일
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── scss/                # SCSS 파일 (소스)
+│   │   │   │   ├── base/            # 기본 스타일 (변수, 초기화)
+│   │   │   │   ├── components/      # 컴포넌트 스타일 (버튼, 카드 등)
+│   │   │   │   ├── layout/          # 레이아웃 스타일 (헤더, 푸터 등)
+│   │   │   │   └── main.scss        # 메인 SCSS 파일 (모든 파일 임포트)
+│   │   │   └── main.css             # 컴파일된 CSS (자동 생성)
+│   │   ├── img/
+│   │   │   ├── common/              # 공통 이미지
+│   │   │   └── pages/               # 페이지별 이미지
+│   │   └── js/
+│   │       ├── common/              # 공통 자바스크립트
+│   │       └── pages/               # 페이지별 자바스크립트
+│   ├── includes/                    # HTML include 파일들
+│   │   ├── header.html              # 헤더
+│   │   ├── footer.html              # 푸터
+│   │   └── nav.html                 # 네비게이션
+│   └── pages/                       # HTML 페이지
+│       └── index.html               # 홈페이지
+├── dist/                             # 빌드된 결과물 (배포용)
+├── package.json                      # 프로젝트 설정 및 의존성
+├── gulpfile.js                       # Gulp 작업 설정
+└── .gitignore                        # Git 무시 파일
+
+
+🛠️ 개발 환경 설정
+================================================================================
+
+1. Node.js 설치
+   - https://nodejs.org 에서 LTS 버전 다운로드 및 설치
+
+2. 의존성 설치
+   터미널에서 프로젝트 폴더로 이동 후:
+   $ npm install
+
+3. 개발 서버 시작
+   $ npm start
+   - SCSS가 자동으로 컴파일됩니다
+   - HTML include 처리가 자동으로 됩니다
+   - 파일 변경 시 자동으로 브라우저가 새로고침됩니다
+   - 기본 포트: http://localhost:3000
+
+
+📝 SCSS 관리 방법
+================================================================================
+
+SCSS 구조:
+├── base/_variables.scss      # 색상, 폰트, 크기, 반응형 등 변수 정의
+├── base/_reset.scss          # 브라우저 기본 스타일 초기화
+├── components/_button.scss   # 버튼 컴포넌트 스타일
+├── components/_card.scss     # 카드 컴포넌트 스타일
+├── layout/_header.scss       # 헤더 스타일
+├── layout/_footer.scss       # 푸터 스타일
+└── main.scss                 # 모든 SCSS 파일을 임포트하는 메인 파일
+
+사용 방법:
+- 변수 추가: src/assets/css/scss/base/_variables.scss 수정
+- 새 컴포넌트: src/assets/css/scss/components/(이름).scss 생성 후 main.scss에 추가
+- 새 레이아웃: src/assets/css/scss/layout/(이름).scss 생성 후 main.scss에 추가
+- 변경사항은 자동으로 dist/assets/css/main.css로 컴파일됨
+
+초기 변수 예시:
+- 색상: $primary, $secondary, $danger, $success 등
+- 크기: $spacing-xs, $spacing-sm, $spacing-md, $spacing-lg, $spacing-xl
+- 반응형: $breakpoint-sm, $breakpoint-md, $breakpoint-lg 등
+- 트랜지션: $transition-base, $transition-fast, $transition-slow 등
+
+
+🔗 HTML Include 방법
+================================================================================
+
+HTML include를 통해 반복되는 코드(헤더, 푸터 등)를 공유할 수 있습니다.
+
+Include 파일 위치: src/includes/
+
+사용 방법:
+src/pages 하위의 HTML 파일에서:
+
+  <!--#include virtual="/includes/header.html" -->
+  
+  <main>
+    <!-- 페이지 고유 컨텐츠 -->
+  </main>
+  
+  <!--#include virtual="/includes/footer.html" -->
+
+Include 파일들:
+- header.html     : 사이트 상단 헤더 (로고, 네비 등)
+- footer.html     : 사이트 하단 푸터
+- nav.html        : 네비게이션 (필요시 사용)
+
+새 Include 파일 추가:
+1. src/includes/(파일명).html 생성
+2. 필요한 페이지에서 <!--#include virtual="/includes/(파일명).html" --> 추가
+3. npm start 실행 시 자동으로 처리됨
+
+
+📱 반응형 디자인
+================================================================================
+
+미리 정의된 브레이크포인트:
+- $breakpoint-xs: 320px   (매우 작은 화면)
+- $breakpoint-sm: 576px   (작은 화면)
+- $breakpoint-md: 768px   (태블릿)
+- $breakpoint-lg: 992px   (데스크톱)
+- $breakpoint-xl: 1200px  (큰 화면)
+- $breakpoint-2xl: 1400px (매우 큰 화면)
+
+SCSS 사용 예:
+  @media (max-width: $breakpoint-md) {
+    /* 태블릿 이하 스타일 */
+  }
+
+
+🎨 컴포넌트 사용 예시
+================================================================================
+
+버튼:
+  <button class="btn btn-primary">Primary Button</button>
+  <button class="btn btn-secondary">Secondary Button</button>
+  <button class="btn btn-outline">Outline Button</button>
+  <button class="btn btn-sm">Small Button</button>
+  <button class="btn btn-lg">Large Button</button>
+
+카드:
+  <div class="card-group">
+    <div class="card">
+      <div class="card-image">
+        <img src="../assets/img/common/sample.jpg" alt="Sample">
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Card Title</h3>
+        <p class="card-text">Card description</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">View</button>
+      </div>
+    </div>
+  </div>
+
+유틸리티 클래스:
+  - 텍스트: .text-center, .text-left, .text-right
+  - 마진: .mt-1, .mt-2, .mt-3, .mt-4, .mb-1, .mb-2 등
+  - 패딩: .p-1, .p-2, .p-3, .p-4
+  - 표시: .hidden, .visible
+
+
+📦 빌드 및 배포
+================================================================================
+
+개발 중:
+  $ npm start       # 개발 서버 시작 (자동 감시)
+
+프로덕션 빌드:
+  $ npm run build   # 최종 빌드 (minify, optimize)
+  - 결과물: dist/ 폴더에 생성
+
+배포:
+  - dist/ 폴더 전체를 웹 서버에 업로드
+  - dist/index.html, dist/assets/ 등이 포함됨
+
+
+📂 파일 추가 방법
+================================================================================
+
+새 HTML 페이지 추가:
+  1. src/pages/(페이지명).html 생성
+  2. Include 방식으로 header, footer 포함
+  3. npm start 실행 시 dist에 자동 생성
+
+새 SCSS 파일 추가:
+  1. src/assets/css/scss/(폴더)/(파일명).scss 생성
+  2. src/assets/css/scss/main.scss에 import 추가
+  - 예: @import 'components/newComponent';
+
+새 자바스크립트 추가:
+  1. src/assets/js/pages/(파일명).js 생성
+  2. HTML 파일에서 <script src="../assets/js/pages/(파일명).js"></script>로 로드
+
+이미지 추가:
+  1. src/assets/img/common/ 또는 ./pages/ 에 저장
+  2. HTML에서 <img src="../assets/img/(폴더)/(파일명)"> 로 사용
+
+
+⚙️ Gulp 명령어
+================================================================================
+
+$ npm start         # 개발 서버 시작 (필수)
+$ npm run build     # 프로덕션 빌드
+$ npm run watch     # 파일 감시 모드 (npm start와 유사)
+
+
+🔧 유용한 팁
+================================================================================
+
+1. 변수 커스마이징
+   _variables.scss에서 색상, 크기 등을 수정하면
+   전체 프로젝트에 자동으로 적용됩니다.
+
+2. Include 파일 관리
+   공통 부분을 include 파일로 분리하면
+   유지보수가 매우 편합니다.
+
+3. SCSS 중첩
+   SCSS의 중첩 기능을 활용하여 코드를 더 효율적으로 작성합니다:
+   
+   header {
+     background: $dark;
+     
+     nav {
+       display: flex;
+       
+       ul {
+         list-style: none;
+       }
+     }
+   }
+
+4. Mixin 활용
+   반복되는 코드는 mixin으로 작성하면 편합니다:
+   
+   @mixin flex-center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .container {
+     @include flex-center;
+   }
+
+
+📚 학습 리소스
+================================================================================
+
+- SCSS 공식문서: https://sass-lang.com/
+- Gulp 문서: https://gulpjs.com/
+- CSS 트릭: https://css-tricks.com/
+- MDN 웹 문서: https://developer.mozilla.org/ko/
+
+
+✅ 체크리스트 - 첫 번째 실행
+================================================================================
+
+[ ] 1. Node.js 설치 확인: node -v, npm -v
+[ ] 2. 프로젝트 폴더로 이동
+[ ] 3. npm install 실행 (의존성 설치)
+[ ] 4. npm start 실행 (개발 서버 시작)
+[ ] 5. http://localhost:3000 브라우저에서 확인
+[ ] 6. src의 파일들을 수정하여 dist에 반영되는지 확인
+[ ] 7. SCSS 수정 후 자동 컴파일 확인
+[ ] 8. HTML include 작동 확인
+
+================================================================================

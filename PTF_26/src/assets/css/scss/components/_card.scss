@@ -1,0 +1,289 @@
+/**/
+@mixin paginationReset {
+  &-pagination-fraction {
+    font-size: $font-size-sm;
+    color: $gray;
+  }
+}
+/* Card Components */
+.card {
+  background-color: white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: $light;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition-base;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  .card-body {
+    padding: $spacing-lg;
+  }
+
+  .card-title {
+    font-size: $font-size-lg;
+    font-weight: bold;
+    margin-bottom: $spacing-md;
+    color: $secondary;
+  }
+
+  .card-text {
+    font-size: $font-size-base;
+    color: $gray;
+    margin-bottom: $spacing-md;
+    line-height: 1.6;
+  }
+
+  .card-footer {
+    padding: 0 $spacing-lg $spacing-lg;
+    display: flex;
+    gap: $spacing-md;
+  }
+}
+
+.card-item {
+  position: relative;
+  background-color: white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  transition: $transition-base;
+  padding: $spacing-md;
+  .btn-popup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+
+  .title {
+    font-weight: bold;
+    color: $success;
+    min-width: 50px;
+    display: block;
+  }
+}
+
+.career-swiper {
+  position: relative;
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .career-slide {
+    height: 100%;
+    padding: $spacing-md;
+    border: 1px solid $light;
+    border-radius: $radius-lg;
+    background-color: rgba($light, 0.35);
+  }
+
+  .swiper {
+    &-button-group {
+      position: absolute;
+      top: 1.3rem;
+      right: 0.5rem;
+      width: 3rem;
+      height: 16px;
+    }
+    &-pagination {
+      position: relative;
+      margin-top: $spacing-sm;
+    }
+    &-button-next,
+    &-button-prev {
+      width: 1rem !important;
+      height: 1rem !important;
+      top: 0 !important;
+      margin: 0 !important;
+      color: $dark !important;
+    }
+    @include paginationReset;
+  }
+}
+
+.project-swiper {
+  position: relative;
+  max-height: 330px;
+  overflow: hidden;
+  padding-top: 1rem;
+
+  .swiper-wrapper {
+    height: 100%;
+    transition-timing-function: linear !important;
+  }
+
+  .swiper-slide {
+    height: auto !important;
+    border-bottom: 1px solid $light;
+  }
+
+  .swiper {
+    &-button-group {
+      position: absolute;
+      top: 0;
+      right: 0rem;
+      width: 4.3rem;
+      height: 16px;
+    }
+    &-pagination {
+      position: relative;
+      margin-top: $spacing-sm;
+    }
+    @include paginationReset;
+    &-pagination-fraction {
+      width: auto;
+      position: absolute;
+      left: auto;
+      right: 0;
+      bottom: auto;
+      top: 0;
+      margin: 0;
+      text-align: right;
+      font-size: 0.6rem;
+    }
+  }
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.career {
+  &-box {
+    h3 {
+      color: $success;
+      font-size: $font-size-base;
+    }
+  }
+  &-item {
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid $light;
+    font-size: $font-size-sm;
+    .title {
+      display: inline-block;
+      min-width: 30px;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &-period {
+    font-weight: bold;
+  }
+}
+
+.project {
+  &-item {
+    font-size: $font-size-sm;
+    .title {
+      display: inline-block;
+      min-width: 30px;
+    }
+  }
+}
+
+.project-name,
+.project-period,
+.project-desc {
+  margin-bottom: $spacing-xs;
+}
+
+.project-detail-list {
+  margin: $spacing-xs 0 0;
+  li {
+    line-height: 1.5;
+  }
+}
+
+.project-table-wrap {
+  overflow-y: auto;
+  height: calc(100vh - 10rem);
+  h3 {
+    font-size: $font-size-sm;
+    padding: 4px 0;
+  }
+  .project-table {
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 10px;
+    border: 1px solid $light;
+
+    td:nth-of-type(4) {
+      padding: 4px 8px;
+      text-align: left;
+    }
+    thead {
+      tr {
+        th {
+          color: #333;
+          padding: 8px 0;
+          border: 1px solid $light;
+          background-color: $light;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          color: #555;
+          padding: 4px 0;
+          text-align: center;
+          border: 1px solid $light;
+          font-size: $font-size-sm;
+        }
+        &:hover {
+          td {
+            background-color: #eee;
+          }
+        }
+      }
+    }
+  }
+  .project-table {
+    td:nth-of-type(3) {
+      padding: 4px 8px;
+      text-align: left;
+    }
+  }
+}

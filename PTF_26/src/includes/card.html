@@ -1,0 +1,46 @@
+<section class="card-sec pt-4 pb-4">
+  <div class="card-group">
+    <div class="card-item">
+      <h2 class="card-title">Skills</h2>
+      <div class="ico"><i class="icon"><img src="../assets/img/common/icon-cat.png" alt=""></i></div>
+      <p class="card-text"><span class="title">HTML:</span> Semantic, Accessibility, SEO</p>
+      <p class="card-text"><span class="title">CSS:</span> CSS3, SCSS, Flexbox, Grid Flex</p>
+      <p class="card-text"><span class="title">JS:</span> JavaScript, jQuery, ES6, Swiper</p>
+      <p class="card-text"><span class="title">Tools:</span> Git, Figma, Zeplin, Jira</p>
+    </div>
+
+
+    <div class="card-item">
+      <h2 class="card-title">Career</h2>
+      <div class="ico"><i class="icon"><img src="../assets/img/common/icon-business-man.png" alt=""></i></div>
+      <div class="career-box">
+        <div class="swiper career-swiper">
+          <div class="swiper-wrapper" id="career-list"></div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-group">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-item">
+      <h2 class="card-title">PROJECT</h2>
+      <div class="ico"><i class="icon"><img src="../assets/img/common/icon-discussion.png" alt=""></i></div>
+      <div class="project-box">
+        <div class="swiper project-swiper">
+          <div class="swiper-wrapper" id="project-list"></div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <button type="button" class="btn-popup btn btn-secondary btn-sm" data-modal-target="#project-modal">
+        프로젝트 전체보기 ✏️
+      </button>
+    </div>
+  </div>
+</section>
+
+@@include('../includes/modal.html')
