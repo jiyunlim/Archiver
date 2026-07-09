@@ -5,6 +5,7 @@ views/
 dist/
 .env
 .DS_Store
+README.md
 
 # 계정/민감 정보
 ★ 계정.txt
