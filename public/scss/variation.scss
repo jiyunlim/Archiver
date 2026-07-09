@@ -1,6 +1,7 @@
 $ft-title : 24px;
 $ft-normal : 16px;
 $ft-small : 14px;
+$ft-xsmall : 11px;
 
 $skt-color : #3617CE;
 $skt-color2 : #ff404e;
@@ -23,6 +24,8 @@ $ico-graphic : "../images/ico/icon-graphic-designer.png";
 $ico-discussion : "../images/ico/icon-discussion.png";
 $ico-round-arrow : "../images/ico/round-arrow.png";
 $ico-soft-skill : "../images/ico/icon-soft-skill.png";
+$img-window-wide : "../images/windows-wide.jpg";
+$ico-cursor : "../images/ico/icon-cursor.png";
 
 @mixin icons($w: 20px, $h: 20px){
   width: $w;
@@ -30,4 +33,10 @@ $ico-soft-skill : "../images/ico/icon-soft-skill.png";
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@mixin font-style($size: $ft-normal, $weight: normal, $color: #222){
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
 }

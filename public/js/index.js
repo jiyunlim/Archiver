@@ -98,39 +98,39 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	// div-acodiant
 	const accodiantEls = document.querySelectorAll(".div-accodiant");
-	if (!accodiantEls.length) return;
+	if (accodiantEls.length) {
+		accodiantEls.forEach((el) => {
+			const slideCount = el.querySelectorAll(".swiper-slide").length;
+			const existingInstance = el.swiper; // Swiper가 DOM 노드에 보관하는 인스턴스
 
-	accodiantEls.forEach((el) => {
-		const slideCount = el.querySelectorAll(".swiper-slide").length;
-		const existingInstance = el.swiper; // Swiper가 DOM 노드에 보관하는 인스턴스
-
-		if (slideCount > 1) {
-			if (existingInstance) existingInstance.destroy(true, true);
-			new Swiper(el, {
-				slidesPerView: 1,
-				spaceBetween: 20,
-				breakpoints: {
-					640: { slidesPerView: 1.5, spaceBetween: 20 },
-					768: { slidesPerView: 1.5, spaceBetween: 20 },
-					1024: { slidesPerView: 2.5, spaceBetween: 20 },
-				},
-				pagination: { el: el.querySelector(".swiper-fraction"), type: "fraction", clickable: true },
-				navigation: {
-					nextEl: el.querySelector('.swiper-button-next'),
-					prevEl: el.querySelector('.swiper-button-prev'),
-				},
-			});
-		} else {
-			if (existingInstance) {
-				existingInstance.destroy(true, true);
+			if (slideCount > 1) {
+				if (existingInstance) existingInstance.destroy(true, true);
+				new Swiper(el, {
+					slidesPerView: 1,
+					spaceBetween: 20,
+					breakpoints: {
+						640: { slidesPerView: 1.5, spaceBetween: 20 },
+						768: { slidesPerView: 1.5, spaceBetween: 20 },
+						1024: { slidesPerView: 2.5, spaceBetween: 20 },
+					},
+					pagination: { el: el.querySelector(".swiper-fraction"), type: "fraction", clickable: true },
+					navigation: {
+						nextEl: el.querySelector('.swiper-button-next'),
+						prevEl: el.querySelector('.swiper-button-prev'),
+					},
+				});
+			} else {
+				if (existingInstance) {
+					existingInstance.destroy(true, true);
+				}
+				// 슬라이드가 1개 이하일 때 클래스명 추가
+				const slides = el.querySelectorAll(".swiper-slide");
+				slides.forEach(slide => {
+					slide.classList.add("single-slide");
+				});
 			}
-			// 슬라이드가 1개 이하일 때 클래스명 추가
-			const slides = el.querySelectorAll(".swiper-slide");
-			slides.forEach(slide => {
-				slide.classList.add("single-slide");
-			});
-		}
-	});
+		});
+	}
 	// ----
 	const today = new Date();
 

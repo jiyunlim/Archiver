@@ -1,5 +1,7 @@
 node_modules/
 public/css/*.map
+public/
+views/
 .env
 .DS_Store
 
