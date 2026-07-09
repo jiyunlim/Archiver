@@ -2,6 +2,7 @@ node_modules/
 public/css/*.map
 public/
 views/
+dist/
 .env
 .DS_Store
 
