@@ -9,6 +9,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 🔹 공통 변수
 app.locals.assetPath = '';
+app.locals.assetVersion = process.env.RENDER_GIT_COMMIT || 'dev';
+
+// 캐시 방지
+app.use((req, res, next) => {
+  if (req.path === '/' || req.path.endsWith('.html')) {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  }
+  next();
+});
 
 // 라우트
 app.get('/', (req, res) => res.render('index'));

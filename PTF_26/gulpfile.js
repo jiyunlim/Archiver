@@ -9,6 +9,10 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
 
+function getAssetVersion() {
+  return Date.now().toString();
+}
+
 // SCSS to CSS 컴파일
 function compileSass() {
   return gulp.src('src/assets/css/scss/main.scss')
@@ -22,11 +26,18 @@ function compileSass() {
 
 // HTML include 처리
 function htmlInclude() {
+  const version = getAssetVersion();
+
   return gulp.src('src/pages/**/*.html')
     .pipe(fileInclude({
       basepath: '@file'
     }))
     .pipe(replace(/\.\.\/assets\//g, 'assets/'))
+    .pipe(replace(/(main\.css)\?v=[^"']*/g, `$1?v=${version}`))
+    .pipe(replace(/(common\.js)\?v=[^"']*/g, `$1?v=${version}`))
+    .pipe(replace(/(career\.js)\?v=[^"']*/g, `$1?v=${version}`))
+    .pipe(replace(/(swiper-bundle\.min\.css)\?v=[^"']*/g, `$1?v=${version}`))
+    .pipe(replace(/(swiper-bundle\.min\.js)\?v=[^"']*/g, `$1?v=${version}`))
     .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 }
