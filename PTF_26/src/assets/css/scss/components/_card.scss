@@ -88,6 +88,23 @@
   }
 }
 
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-lg;
+
+  &.col-2 {
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  } 
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
 .career-swiper {
   position: relative;
 
@@ -171,20 +188,6 @@
       text-align: right;
       font-size: 0.6rem;
     }
-  }
-}
-
-.card-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: $spacing-lg;
-
-  @media (max-width: $breakpoint-md) {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    grid-template-columns: 1fr;
   }
 }
 
