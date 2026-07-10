@@ -70,3 +70,36 @@
     }
   }
 }
+
+.label-txt {
+  font-size: $font-size-sm;
+  color: $dark;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $radius-base;
+  gap: .25rem;
+  &.is-default {
+    background-color: $light;
+    color: $dark;
+  }
+  &.is-primary {
+    background-color: $primary;
+    color: white;
+  }
+  &.is-success {
+    background-color: $success;
+    color: white;
+  }
+  &.is-warning {
+    background-color: $warning;
+    color: white;
+  }
+  &.is-danger {
+    background-color: $danger;
+    color: white;
+  }
+}
