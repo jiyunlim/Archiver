@@ -1,6 +1,6 @@
 node_modules/
 # src/
-dist/
+# dist/
 *.log
 .DS_Store
 .env
