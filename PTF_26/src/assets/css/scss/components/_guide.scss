@@ -1,0 +1,32 @@
+.section-title {
+}
+.guide-text {
+  font-size: $font-size-sm;
+  color: $gray;
+  .code {
+    color: $success;
+  }
+}
+.guide-sample {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+  align-items: center;
+  justify-content: space-around;
+}
+.guide-list {
+  padding: $spacing-md;
+  border-radius: $radius-lg;
+  background-color: $lightGray;
+  li {
+    font-size: $font-size-sm;
+    strong,
+    span {
+      font-size: $font-size-sm;
+    }
+    .code {
+      font-weight: bold;
+      color: $success;
+    }
+  }
+}
