@@ -52,7 +52,8 @@ function minifyJs() {
 // 이미지 복사
 function copyImages() {
   return gulp.src('src/assets/img/**/*')
-    .pipe(gulp.dest('dist/assets/img'));
+    .pipe(gulp.dest('dist/assets/img'))
+    .pipe(gulp.dest('dist/img')); // also copy to dist/img for legacy paths
 }
 
 // Swiper CSS 복사
