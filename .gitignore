@@ -2,7 +2,7 @@ node_modules/
 public/css/*.map
 views/
 public/
-dist/
+# dist/
 .env
 .DS_Store
 README.md
