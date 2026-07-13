@@ -1,8 +1,8 @@
 node_modules/
 public/css/*.map
-public/
 views/
-dist/
+# public/
+# dist/
 .env
 .DS_Store
 README.md

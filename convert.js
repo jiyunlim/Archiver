@@ -31,7 +31,10 @@ fs.readdirSync(viewsDir).forEach((file) => {
 
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const html = ejs.render(content, { assetPath: 'public' }, { filename: filePath });
+    const html = ejs.render(content, {
+      assetPath: 'public',
+      assetVersion: process.env.RENDER_GIT_COMMIT || 'dev'
+    }, { filename: filePath });
     const outFile = path.join(distDir, path.basename(file, '.ejs') + '.html');
     fs.writeFileSync(outFile, html);
     console.log(`✅ Converted: ${file} → ${path.basename(outFile)}`);
