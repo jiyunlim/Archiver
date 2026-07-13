@@ -28,7 +28,7 @@ const careerGroups = [
         period: '2021.10 ~ 2023.12',
         company: 'SKT - T direct Shop',
         role: 'InApp, Web, WebMobile 퍼블리싱',
-        desc: 'T direct Shop 개발기획 운영 및 고도화'
+        desc: 'T direct Shop 개발기획 운영 및 고도화 , 모바일(Inapp) 웹접근성 작업'
       }
     ]
   },

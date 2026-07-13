@@ -161,3 +161,13 @@ main {
     cursor: auto;
   }
 }
+.message{
+  font-size: $font-size-sm;
+  color: $gray;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .ico{
+    color: $gray;
+  }
+}

@@ -82,10 +82,11 @@ $icon-sizes: (
     display: inline-block;
     width: $size;
     height: $size;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: map-get($icons, $name);
+    mask-image: map-get($icons, $name);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain; 
+    background-color: currentColor;
     vertical-align: middle;
   } @else {
     @warn "No icon found for `#{$name}`. Available icons: #{map-keys($icons)}`";
