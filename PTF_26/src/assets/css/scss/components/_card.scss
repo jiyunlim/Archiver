@@ -95,7 +95,13 @@
 
   &.col-2 {
     grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-  } 
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
 
   @media (max-width: $breakpoint-md) {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
