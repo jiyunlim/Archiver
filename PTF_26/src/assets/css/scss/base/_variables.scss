@@ -10,7 +10,7 @@ $dark: #2c3e50;
 $gray: #95a5a6;
 
 /* Typography */
-$font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+$font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
 $font-size-base: 16px;
 $font-size-lg: 18px;
 $font-size-sm: 14px;
@@ -48,11 +48,66 @@ $shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 $shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
-$shadow-card: 6px 7px 20px 5px rgba(0, 0, 0, .1);
+$shadow-card: 6px 7px 20px 5px rgba(0, 0, 0, 0.1);
 
 /* icon */
-$icon-size: 4rem;
-.ico {
+$ic-info: url("../img/svg/ic-info.svg");
+$ic-x: url("../img/svg/ic-x.svg");
+$ic-tab-search: url("../img/svg/ic-tab-search.svg");
+
+$icons: (
+  info: $ic-info,
+  x: $ic-x,
+  "tab-search": $ic-tab-search,
+);
+
+$icon-size: 4rem; /*card 사이즈*/
+$icon-size-default: 2rem; /*기본사이즈*/
+
+/* size variables */
+$ic-s-sm: 1rem;
+$ic-s-md: 2rem;
+$ic-s-lg: 3rem;
+
+$icon-sizes: (
+  sm: $ic-s-sm,
+  md: $ic-s-md,
+  lg: $ic-s-lg,
+);
+
+@mixin icon($name, $size: $icon-size-default) {
+  @if map-has-key($icons, $name) {
     display: inline-block;
-    max-width: $icon-size;
+    width: $size;
+    height: $size;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: map-get($icons, $name);
+    vertical-align: middle;
+  } @else {
+    @warn "No icon found for `#{$name}`. Available icons: #{map-keys($icons)}`";
+  }
 }
+
+@each $name, $svg in $icons {
+  .ic-#{$name},
+  .ico.ic-#{$name} {
+    @include icon($name);
+  }
+}
+
+/* size modifier classes (override icon width/height when applied) */
+@each $size-name, $size-val in $icon-sizes {
+  .ic-s-#{$size-name},
+  .ico.ic-s-#{$size-name} {
+    width: $size-val !important;
+    height: $size-val !important;
+  }
+}
+
+.icon {
+  display: inline-block;
+  max-width: $icon-size;
+}
+  

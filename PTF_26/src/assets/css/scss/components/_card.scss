@@ -86,6 +86,9 @@
     min-width: 50px;
     display: block;
   }
+  .icon{
+    max-width: $icon-size;
+  }
 }
 
 .card-group {
