@@ -54,11 +54,13 @@ $shadow-card: 6px 7px 20px 5px rgba(0, 0, 0, 0.1);
 $ic-info: url("../img/svg/ic-info.svg");
 $ic-x: url("../img/svg/ic-x.svg");
 $ic-search: url("../img/svg/ic-search.svg");
+$ic-setting: url("../img/svg/ic-setting.svg");
 
 $icons: (
   info: $ic-info,
   x: $ic-x,
-  search: $ic-search
+  search: $ic-search,
+  setting: $ic-setting
 );
 
 $icon-size: 4rem; /*card 사이즈*/
