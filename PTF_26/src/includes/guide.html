@@ -54,7 +54,7 @@
         <ul class="guide-sample pb-2">
           <li><span class="ico ic-info ic-s-sm" aria-label="주요 아이콘"></span></li>
           <li><span class="ico ic-x ic-s-md" aria-label="닫기 아이콘"></span></li>
-          <li><span class="ico ic-search ic-s-lg" aria-label="검색 아이콘"></span></li>
+          <li><span class="ico ic-search ic-s-md" aria-label="검색 아이콘"></span></li>
           <li><span class="ico ic-setting ic-s-lg" aria-label="설정 아이콘"></span></li>
         </ul>
         <ul class="guide-list mb-2">
@@ -62,7 +62,39 @@
           <li><strong>아이콘 크기:</strong> <span class="code">.ic-s-sm</span> (작게), <span class="code">.ic-s-md</span> (중간), <span class="code">.ic-s-lg</span> (크게)</li>
           <li><strong>접근성:</strong> 아이콘에는 명확한 텍스트 라벨을 사용하고 필요 시 <span class="code">aria-label</span>을 추가.</li>
         </ul>
-        <p class="guide-example"><strong>예시:</strong> <br> &lt;span class="ico ic-info" aria-label="정보 아이콘"&gt;&lt;/span&gt;</p>
+        <p class="guide-example"><strong>예시:</strong> <br> &lt;span class="ico ic-info ic-s-lg" aria-label="정보 아이콘"&gt;&lt;/span&gt;</p>
+      </div>
+    </div>
+
+    <div class="card-item">
+      <h2 class="card-title">Input</h2>
+      <div class="guide-box">
+        <p class="guide-text pb-2">Input 사용 가이드: 기본 Input은 <strong class="code">.form-label</strong> 클래스를 사용.</p>
+        <ul class="guide-sample pb-2">
+          <li>
+            <div class="input-form input-s-sm">
+              <label for="input-text" class="input-label">텍스트 입력해 주세요.</label>
+              <input type="text" id="input-text" class="input-field" placeholder="텍스트를 입력하세요">
+            </div>
+          </li>
+          <li>
+            <div class="input-form input-s-md">
+              <label for="input-content" class="input-label">내용을 입력해 주세요.</label>
+              <input type="text" id="input-content" class="input-field" placeholder="콘텐츠를 입력하세요">
+            </div>
+          </li>
+          <li>
+            <div class="input-form input-s-lg">
+              <label for="input-email" class="input-label">이메일 입력해주세요.</label>
+              <input type="email" id="input-email" class="input-field" placeholder="이메일을 입력하세요">
+            </div>
+          </li>
+        </ul>
+        <ul class="guide-list mb-2">
+					<li><strong>Input 크기:</strong> <span class="code">.input-s-sm</span> (작게), <span class="code">.input-s-md</span> (중간), <span class="code">.input-s-lg</span> (크게)</li>
+          <li><strong>접근성:</strong> Input에는 반드시 <span class="code">&lt;label&gt; </span> tag를 사용.</li>
+        </ul>
+        <p class="guide-example"><strong>예시:</strong> <br> &lt;div class="input-form input-s-md"&gt;<br>   &lt;label for="input-text" class="input-label"&gt;텍스트 입력해 주세요.&lt;/label&gt;<br>   &lt;input type="text" id="input-text" class="input-field" placeholder="텍스트를 입력하세요"&gt;<br> &lt;/div&gt;</p>
       </div>
     </div>
   </div>

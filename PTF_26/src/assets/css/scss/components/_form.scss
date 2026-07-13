@@ -1,0 +1,59 @@
+@mixin input-size($height) {
+  height: #{$height}px;
+}
+
+.input-form {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-radius: $radius-base;
+  border: 1px solid#bebebe;
+  transition: box-shadow 0.3s;
+  .input-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+  .input-field {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    padding: 0 .5rem;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $gray;
+    }
+  }
+}
+
+.input-s-sm {
+  @include input-size(28);
+  .input-field {
+    font-size: $font-size-sm;
+  }
+}
+
+.input-s-md {
+  @include input-size(32);
+  .input-field {
+    font-size: $font-size-base;
+  }
+}
+
+.input-s-lg {
+  @include input-size(36);
+  .input-field {
+    font-size: $font-size-lg;
+  } 
+}
